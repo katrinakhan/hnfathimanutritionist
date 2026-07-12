@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weight Loss Journey</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-M3KM2M6K');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16702228178"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-16702228178');
+    </script>
+    <script>
+      gtag('event', 'conversion', {
+          'send_to': 'AW-16702228178/xHh8CO-EuNUZENKNn5w-',
+          'value': 1.0,
+          'currency': 'AED'
+      });
+    </script>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M3KM2M6K"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    {% set img = url_for('static', filename='images/') %}
+
+    <div class="container">
+        <header>
+            <div class="header-left">
+                <div class="logo">
+                    <img src="{{ img }}nutritionist_image.png" alt="Certified Nutritionist">
+                </div>
+                <div class="udemy-logo">
+                    <a href="https://www.udemy.com/course/the-easiest-way-to-lose-weight/?couponCode=CP130525" target="_blank" rel="noopener noreferrer">
+                        <img src="{{ img }}udemylogo.png" alt="Udemy">
+                    </a>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="header-text">Interviewed by Emmy Award Winner Kate Delaney on America Tonight</div>
+                <div class="header-images">
+                    <img src="{{ img }}kate.jpg" alt="Kate Delaney" class="kate-img">
+                    <img src="{{ img }}emmy.jpg" alt="Emmy Awards" class="emmy-img">
+                </div>
+            </div>
+        </header>
+
+        <div class="about-coaching-section">
+            <div class="logos-banner" aria-label="Featured platforms carousel">
+                <div class="logos-marquee">
+                    <div class="logos-track">
+                        <div class="logos-seq">
+                            <a href="https://www.udemy.com/course/the-easiest-way-to-lose-weight/?couponCode=KEEPLEARNING" target="_blank" rel="noopener noreferrer" aria-label="Udemy Course">
+                                <img src="{{ img }}udemytbg.png" alt="Udemy" class="logo-img">
+                            </a>
+                            <a href="https://www.kobo.com/ph/en/ebook/alchemise-yourself-1" target="_blank" rel="noopener noreferrer" aria-label="Kobo">
+                                <img src="{{ img }}rakutenlogo.avif" alt="Kobo (Rakuten)" class="logo-img">
+                            </a>
+                            <a href="https://www.barnesandnoble.com/w/alchemise-yourself-nageen/1125323745?ean=9781482880724" target="_blank" rel="noopener noreferrer" aria-label="Barnes & Noble">
+                                <img src="{{ img }}barnesandnobleslogo.avif" alt="Barnes & Noble" class="logo-img logo-bn">
+                            </a>
+                            <a href="https://play.google.com/store/books/details?id=eFa2DQAAQBAJ&rdid=book-eFa2DQAAQBAJ&rdot=1&source=gbs_atb&pcampaignid=books_booksearch_atb&pli=1" target="_blank" rel="noopener noreferrer" aria-label="Google Play Books">
+                                <img src="{{ img }}googlelogo.avif" alt="Google Play Books" class="logo-img">
+                            </a>
+                            <a href="http://amazon.com/Nutrition-Simplified-Nageena-Fathima-ebook/dp/B08DQ6CJPJ/ref=sr_1_1?crid=9IRE4UWIP32O&keywords=nutrition+simplified&qid=1645629659&sprefix=nutrition+simplified%2Caps%2C235&sr=8-1" target="_blank" rel="noopener noreferrer" aria-label="Amazon">
+                                <img src="{{ img }}amazonlogo.avif" alt="Amazon" class="logo-img">
+                            </a>
+                            <a href="https://books.apple.com/us/book/alchemise-yourself/id1185823950" target="_blank" rel="noopener noreferrer" aria-label="Apple Books">
+                                <img src="{{ img }}applelogo.avif" alt="Apple Books" class="logo-img">
+                            </a>
+                        </div>
+                        <div class="logos-seq" aria-hidden="true">
+                            <a href="https://www.udemy.com/course/the-easiest-way-to-lose-weight/?couponCode=KEEPLEARNING" target="_blank" rel="noopener noreferrer"><img src="{{ img }}udemytbg.png" alt="" class="logo-img"></a>
+                            <a href="https://www.kobo.com/ph/en/ebook/alchemise-yourself-1" target="_blank" rel="noopener noreferrer"><img src="{{ img }}rakutenlogo.avif" alt="" class="logo-img"></a>
+                            <a href="https://www.barnesandnoble.com/w/alchemise-yourself-nageen/1125323745?ean=9781482880724" target="_blank" rel="noopener noreferrer"><img src="{{ img }}barnesandnobleslogo.avif" alt="" class="logo-img logo-bn"></a>
+                            <a href="https://play.google.com/store/books/details?id=eFa2DQAAQBAJ&rdid=book-eFa2DQAAQBAJ&rdot=1&source=gbs_atb&pcampaignid=books_booksearch_atb&pli=1" target="_blank" rel="noopener noreferrer"><img src="{{ img }}googlelogo.avif" alt="" class="logo-img"></a>
+                            <a href="http://amazon.com/Nutrition-Simplified-Nageena-Fathima-ebook/dp/B08DQ6CJPJ/ref=sr_1_1?crid=9IRE4UWIP32O&keywords=nutrition+simplified&qid=1645629659&sprefix=nutrition+simplified%2Caps%2C235&sr=8-1" target="_blank" rel="noopener noreferrer"><img src="{{ img }}amazonlogo.avif" alt="" class="logo-img"></a>
+                            <a href="https://books.apple.com/us/book/alchemise-yourself/id1185823950" target="_blank" rel="noopener noreferrer"><img src="{{ img }}applelogo.avif" alt="" class="logo-img"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h2 class="about-coaching-heading">Life and Success Coach - Specialist in Nutrition and Fat Loss</h2>
+            <div class="about-coaching-images">
+                <img src="{{ img }}about1.jpg" alt="About Me - HN Fathima" class="about-coaching-img">
+                <img src="{{ img }}about3.jpg" alt="Fat Loss Purpose - HN Fathima" class="about-coaching-img">
+                <img src="{{ img }}about2.jpg" alt="Coaching Strategy - HN Fathima" class="about-coaching-img">
+            </div>
+        </div>
+
+        <div class="certifications-section">
+            <h2 class="certifications-heading">Certifications</h2>
+            <div class="certifications-top-row">
+                <img src="{{ img }}cert1.jpg" alt="Certification 1" class="certification-img certification-img-center cert-trim-top">
+                <img src="{{ img }}cert5.jpeg" alt="Certification 5" class="certification-img">
+            </div>
+            <div class="certifications-images">
+                <img src="{{ img }}cert4.jpg" alt="Certification 4" class="certification-img">
+                <img src="{{ img }}cert2.jpg" alt="Certification 2" class="certification-img">
+                <img src="{{ img }}cert3.jpg" alt="Certification 3" class="certification-img">
+            </div>
+        </div>
+
+        <div class="calendar-section">
+            <h2 class="calendar-heading">Book Your Free 45 Minutes Consultation Below</h2>
+            <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3h8JSAFrNLlpveVnP2VACIsskzOSaxFkvGWsajNVP48V8N-ZmtPqb4QftBUXW-JG1Cp1g8dO9G?gv=true" style="border: 0" width="100%" height="600" frameborder="0"></iframe>
+        </div>
+
+        <div class="testimonials-section">
+            <h2 class="testimonials-heading">Testimonials</h2>
+            <div class="testimonials-marquee" aria-label="Client testimonials carousel">
+                <div class="testimonials-track">
+                    <div class="testimonials-seq">
+                        <img src="{{ img }}tes1.avif" alt="Testimonial 1" class="testimonial-img">
+                        <img src="{{ img }}tes3.avif" alt="Testimonial 3" class="testimonial-img">
+                        <img src="{{ img }}tes4.avif" alt="Testimonial 4" class="testimonial-img">
+                        <img src="{{ img }}tes5.avif" alt="Testimonial 5" class="testimonial-img">
+                        <img src="{{ img }}tes2.avif" alt="Testimonial 2" class="testimonial-img">
+                    </div>
+                    <div class="testimonials-seq" aria-hidden="true">
+                        <img src="{{ img }}tes1.avif" alt="" class="testimonial-img">
+                        <img src="{{ img }}tes3.avif" alt="" class="testimonial-img">
+                        <img src="{{ img }}tes4.avif" alt="" class="testimonial-img">
+                        <img src="{{ img }}tes5.avif" alt="" class="testimonial-img">
+                        <img src="{{ img }}tes2.avif" alt="" class="testimonial-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ebooks-section">
+            <h2 class="ebooks-heading">E-Books</h2>
+            <div class="ebooks-images">
+                <a href="https://www.amazon.com/Nutrition-Simplified-Nageena-Fathima-ebook/dp/B08DQ6CJPJ/ref=sr_1_1?crid=9IRE4UWIP32O&keywords=nutrition+simplified&qid=1645629659&sprefix=nutrition+simplified%2Caps%2C235&sr=8-1" target="_blank" rel="noopener noreferrer">
+                    <img src="{{ img }}ebook1.jpg" alt="E-Book 1: Nutrition Simplified by Nageena Fathima" class="ebook-img">
+                </a>
+                <a href="https://www.amazon.com/Alchemise-Yourself-Nageen-ebook/dp/B07922L4H9/ref=sr_1_1?crid=2A5BPJ5ZUFAOY&keywords=alchemise+yourself&qid=1645627825&sprefix=alchemise+yoursel%2Caps%2C239&sr=8-1" target="_blank" rel="noopener noreferrer">
+                    <img src="{{ img }}ebook2.jpg" alt="E-Book 2: Alchemise Yourself by Nageena Fathima" class="ebook-img">
+                </a>
+            </div>
+            <div class="ebooks-cta-buttons">
+                <a href="https://www.amazon.com/Nutrition-Simplified-Nageena-Fathima-ebook/dp/B08DQ6CJPJ/ref=sr_1_1?crid=9IRE4UWIP32O&keywords=nutrition+simplified&qid=1645629659&sprefix=nutrition+simplified%2Caps%2C235&sr=8-1" class="cta-button" target="_blank" rel="noopener noreferrer">CLICK HERE TO BUY NOW</a>
+                <a href="https://www.amazon.com/Alchemise-Yourself-Nageen-ebook/dp/B07922L4H9/ref=sr_1_1?crid=2A5BPJ5ZUFAOY&keywords=alchemise+yourself&qid=1645627825&sprefix=alchemise+yoursel%2Caps%2C239&sr=8-1" class="cta-button" target="_blank" rel="noopener noreferrer">CLICK HERE TO BUY NOW</a>
+            </div>
+        </div>
+
+        <h1>After Losing 20kg Of Fat Herself,<br><span class="highlight">"Certified Nutritionist"</span> Pledges To Help Others<br>Achieve Their Fat Loss Goals</h1>
+
+        <p class="subtitle">FOR ACTION TAKERS READY TO LOSE FAT...</p>
+
+        <div class="video-container">
+            <video id="videoPlayer" controls poster="{{ img }}thumbnail.png">
+                <source src="https://pub-3080fd4207e345e1afb2394c254b13b3.r2.dev/welcome.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <img src="{{ img }}Button.png" alt="Play" class="play-button">
+        </div>
+
+        <a href="https://www.udemy.com/course/the-easiest-way-to-lose-weight/?couponCode=68BBFF82007C70BCDB83" target="_blank" class="cta-button">CLICK HERE TO BUY NOW</a>
+
+        <p class="lock-in-text">Lock-in access at the discounted price before it goes up</p>
+
+        <footer class="site-footer">
+            <div class="social-links">
+                <a href="https://www.instagram.com/hnfathima/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm10 2c1.654 0 3 1.346 3 3v10c0 1.654-1.346 3-3 3H7c-1.654 0-3-1.346-3-3V7c0-1.654 1.346-3 3-3h10zm-5 3a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm5.5-.75a1.25 1.25 0 11-2.5 0 1.25 1.25 0 012.5 0z"/>
+                    </svg>
+                </a>
+                <a href="https://www.youtube.com/@hnfathima/" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M23.498 6.186a3 3 0 00-2.116-2.123C19.69 3.5 12 3.5 12 3.5s-7.69 0-9.382.563A3 3 0 00.502 6.186 31.58 31.58 0 000 12a31.58 31.58 0 00.502 5.814 3 3 0 002.116 2.123C4.31 20.5 12 20.5 12 20.5s7.69 0 9.382-.563a3 3 0 002.116-2.123A31.58 31.58 0 0024 12a31.58 31.58 0 00-.502-5.814zM9.75 15.02v-6.04L15.5 12l-5.75 3.02z"/>
+                    </svg>
+                </a>
+            </div>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
