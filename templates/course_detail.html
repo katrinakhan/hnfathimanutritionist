@@ -24,6 +24,13 @@
         {% endwith %}
 
         <section class="course-hero">
+            {% if course.thumbnail %}
+                <img
+                    src="{{ url_for('static', filename=course.thumbnail) }}"
+                    alt="{{ course.title }}"
+                    class="course-hero-thumb"
+                >
+            {% endif %}
             <h1>{{ course.title }}</h1>
             <p class="subtitle">{{ course.description }}</p>
             <p class="course-price-large">${{ '%.2f'|format(course.price_cents / 100) }} USD</p>
@@ -35,7 +42,7 @@
             {% else %}
                 <form method="post" action="{{ url_for('create_checkout', course_id=course.id) }}">
                     <button type="submit" class="cta-button shop-buy-button">
-                        Buy now — ${{ '%.2f'|format(course.price_cents / 100) }}
+                        Buy direct — one-click checkout (${{ '%.2f'|format(course.price_cents / 100) }})
                     </button>
                 </form>
                 <p class="lock-in-text">Secure checkout with Stripe. Access unlocks immediately after payment.</p>

@@ -59,6 +59,18 @@
             </div>
         </header>
 
+        <nav class="quick-nav-banner" aria-label="Shop navigation">
+            <a class="quick-nav-btn quick-nav-btn-dark" href="#courses">Buy Courses</a>
+            <a class="quick-nav-btn" href="#ebooks">Buy E-Books</a>
+            <a class="quick-nav-btn" href="#coaching">Book Coaching</a>
+            <a
+                class="quick-nav-btn quick-nav-btn-dark"
+                href="https://www.udemy.com/course/the-easiest-way-to-lose-weight/?couponCode=KEEPLEARNING"
+                target="_blank"
+                rel="noopener noreferrer"
+            >Udemy Course</a>
+        </nav>
+
         <div class="about-coaching-section">
             <div class="logos-banner" aria-label="Featured platforms carousel">
                 <div class="logos-marquee">
@@ -102,6 +114,28 @@
             </div>
         </div>
 
+        <section id="courses" class="courses-banner-section">
+            <h2 class="courses-banner-heading">Online Courses</h2>
+            <p class="courses-banner-tagline">Feel better from the inside out — start with one simple plan.</p>
+            <a class="course-feature-card" href="{{ url_for('course_detail', course_id='3-day-gut-health') }}">
+                <img
+                    src="{{ img }}gut-health-course.jpg"
+                    alt="3-Day Gut Health Challenge course thumbnail"
+                    class="course-feature-thumb"
+                >
+                <div class="course-feature-copy">
+                    <p class="course-feature-eyebrow">Direct checkout on this website</p>
+                    <h3>3-Day Gut Health Challenge</h3>
+                    <p>Three short video lessons you can start today — reset habits and support your gut health.</p>
+                    <span class="course-feature-price">$10</span>
+                    <span class="cta-button course-feature-cta">Buy direct — one-click checkout</span>
+                </div>
+            </a>
+            <p class="courses-banner-more">
+                <a href="{{ url_for('shop') }}">See all courses →</a>
+            </p>
+        </section>
+
         <div class="certifications-section">
             <h2 class="certifications-heading">Certifications</h2>
             <div class="certifications-top-row">
@@ -115,7 +149,7 @@
             </div>
         </div>
 
-        <div class="calendar-section">
+        <div id="coaching" class="calendar-section">
             <h2 class="calendar-heading">Book Your Free 45 Minutes Consultation Below</h2>
             <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3h8JSAFrNLlpveVnP2VACIsskzOSaxFkvGWsajNVP48V8N-ZmtPqb4QftBUXW-JG1Cp1g8dO9G?gv=true" style="border: 0" width="100%" height="600" frameborder="0"></iframe>
         </div>
@@ -142,13 +176,7 @@
             </div>
         </div>
 
-        <div class="home-courses-cta">
-            <h2 class="ebooks-heading">Online Courses</h2>
-            <p class="subtitle">Buy direct — keep more of what you earn</p>
-            <a href="{{ url_for('shop') }}" class="cta-button">Shop courses</a>
-        </div>
-
-        <div class="ebooks-section">
+        <div id="ebooks" class="ebooks-section">
             <h2 class="ebooks-heading">E-Books</h2>
             <div class="ebooks-images">
                 <a href="https://www.amazon.com/Nutrition-Simplified-Nageena-Fathima-ebook/dp/B08DQ6CJPJ/ref=sr_1_1?crid=9IRE4UWIP32O&keywords=nutrition+simplified&qid=1645629659&sprefix=nutrition+simplified%2Caps%2C235&sr=8-1" target="_blank" rel="noopener noreferrer">

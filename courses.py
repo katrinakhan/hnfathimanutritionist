@@ -6,6 +6,7 @@ COURSES = {
         "title": "3-Day Gut Health Challenge",
         "price_cents": 1000,  # $10.00 USD
         "currency": "usd",
+        "thumbnail": "images/gut-health-course.jpg",
         "short_description": (
             "A simple 3-day video challenge to support gut health — "
             "watch one lesson each day and take action."

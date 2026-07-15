@@ -29,6 +29,13 @@
         <div class="course-list">
             {% for course in courses %}
                 <article class="course-listing">
+                    {% if course.thumbnail %}
+                        <img
+                            src="{{ url_for('static', filename=course.thumbnail) }}"
+                            alt="{{ course.title }}"
+                            class="course-listing-thumb"
+                        >
+                    {% endif %}
                     <div>
                         <h2>{{ course.title }}</h2>
                         <p>{{ course.short_description }}</p>

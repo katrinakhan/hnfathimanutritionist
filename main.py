@@ -23,8 +23,9 @@ load_dotenv()
 app = Flask(__name__)
 app.secret_key = os.environ.get("SECRET_KEY", "dev-only-change-me")
 app.permanent_session_lifetime = timedelta(days=365)
-# Needed so login/access cookies work after returning from Stripe on HTTPS
-app.config["SESSION_COOKIE_SECURE"] = True
+# Secure cookies only in production (HTTPS). Local HTTP needs this off.
+_is_production = bool(os.environ.get("PUBLIC_BASE_URL") or os.environ.get("RENDER"))
+app.config["SESSION_COOKIE_SECURE"] = _is_production
 app.config["SESSION_COOKIE_SAMESITE"] = "Lax"
 
 stripe.api_key = os.environ.get("STRIPE_SECRET_KEY", "")
@@ -210,6 +211,5 @@ def watch_course(course_id):
 
 
 if __name__ == "__main__":
-    # Local HTTP: don't require Secure cookies
     app.config["SESSION_COOKIE_SECURE"] = False
-    app.run(debug=True, host="127.0.0.1", port=5000)
+    app.run(debug=True, host="127.0.0.1", port=5001)
