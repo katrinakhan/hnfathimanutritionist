@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ course.title }} | HN Fathima</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <nav class="shop-nav">
+            <a href="{{ url_for('index') }}">← Home</a>
+            <a href="{{ url_for('shop') }}">Courses</a>
+        </nav>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="flash-messages">
+                    {% for category, message in messages %}
+                        <p class="flash flash-{{ category }}">{{ message }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        <section class="course-hero">
+            <h1>{{ course.title }}</h1>
+            <p class="subtitle">{{ course.description }}</p>
+            <p class="course-price-large">${{ '%.2f'|format(course.price_cents / 100) }} USD</p>
+
+            {% if owned %}
+                <a class="cta-button" href="{{ url_for('watch_course', course_id=course.id) }}">
+                    Continue watching
+                </a>
+            {% else %}
+                <form method="post" action="{{ url_for('create_checkout', course_id=course.id) }}">
+                    <button type="submit" class="cta-button shop-buy-button">
+                        Buy now — ${{ '%.2f'|format(course.price_cents / 100) }}
+                    </button>
+                </form>
+                <p class="lock-in-text">Secure checkout with Stripe. Access unlocks immediately after payment.</p>
+            {% endif %}
+        </section>
+
+        <section class="course-curriculum">
+            <h2>What's included</h2>
+            <ol class="lesson-list">
+                {% for lesson in course.lessons %}
+                    <li>
+                        <span class="lesson-title">{{ lesson.title }}</span>
+                        <span class="lesson-duration">{{ lesson.duration }}</span>
+                    </li>
+                {% endfor %}
+            </ol>
+        </section>
+    </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watch · {{ course.title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <nav class="shop-nav">
+            <a href="{{ url_for('index') }}">← Home</a>
+            <a href="{{ url_for('shop') }}">Courses</a>
+            <a href="{{ url_for('course_detail', course_id=course.id) }}">{{ course.title }}</a>
+        </nav>
+
+        <h1 class="shop-title">{{ course.title }}</h1>
+        <p class="shop-intro">Your purchased lessons</p>
+
+        <div class="lesson-players">
+            {% for lesson in course.lessons %}
+                <section class="lesson-player-block">
+                    <h2>{{ lesson.title }}</h2>
+                    <p class="lesson-duration">{{ lesson.duration }}</p>
+                    <div class="bunny-embed">
+                        <iframe
+                            src="{{ lesson.embed_url }}?autoplay=false&preload=true"
+                            loading="lazy"
+                            allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen;"
+                            allowfullscreen
+                            title="{{ lesson.title }}"
+                        ></iframe>
+                    </div>
+                </section>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

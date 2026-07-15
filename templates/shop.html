@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses | HN Fathima</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <nav class="shop-nav">
+            <a href="{{ url_for('index') }}">← Home</a>
+            <a href="{{ url_for('shop') }}">Courses</a>
+        </nav>
+
+        <h1 class="shop-title">Online Courses</h1>
+        <p class="shop-intro">Buy once, get lifetime access — delivered on this website.</p>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="flash-messages">
+                    {% for category, message in messages %}
+                        <p class="flash flash-{{ category }}">{{ message }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        <div class="course-list">
+            {% for course in courses %}
+                <article class="course-listing">
+                    <div>
+                        <h2>{{ course.title }}</h2>
+                        <p>{{ course.short_description }}</p>
+                        <p class="course-meta">{{ course.lessons|length }} lessons</p>
+                    </div>
+                    <div class="course-listing-actions">
+                        <p class="course-price">${{ '%.2f'|format(course.price_cents / 100) }}</p>
+                        <a class="cta-button shop-cta" href="{{ url_for('course_detail', course_id=course.id) }}">
+                            View course
+                        </a>
+                    </div>
+                </article>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
