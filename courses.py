@@ -15,7 +15,7 @@ COURSES = {
         "description": (
             "Your full direct-access course on this website. "
             "Skip the Udemy login and subscription process — checkout once "
-            "and watch here. Section 1 (8 lessons) is ready now; more "
+            "and watch here. Sections 1 and 2 are ready now; more "
             "sections will be added to your access as they go live."
         ),
         "lessons": [
@@ -81,6 +81,62 @@ COURSES = {
                 "embed_url": (
                     "https://player.mediadelivery.net/embed/706368/"
                     "153b6af0-c5f1-458b-9358-166d7c4f7d08"
+                ),
+            },
+            {
+                "title": "9. Intro",
+                "duration": "Section 2",
+                "embed_url": (
+                    "https://player.mediadelivery.net/embed/706368/"
+                    "0d8c70ac-dca3-46aa-a196-2f2f79828632"
+                ),
+            },
+            {
+                "title": "10. Nutrition",
+                "duration": "Section 2",
+                "embed_url": (
+                    "https://player.mediadelivery.net/embed/706368/"
+                    "57a596fe-3567-4926-a796-717b72cf33ab"
+                ),
+            },
+            {
+                "title": "11. Exercise",
+                "duration": "Section 2",
+                "embed_url": (
+                    "https://player.mediadelivery.net/embed/706368/"
+                    "ce6fc7bb-0b34-47c2-ae14-c798b3a0e1cb"
+                ),
+            },
+            {
+                "title": "12. Sleep",
+                "duration": "Section 2",
+                "embed_url": (
+                    "https://player.mediadelivery.net/embed/706368/"
+                    "47d3f651-31ad-4e37-8a99-6bb90f65cfdb"
+                ),
+            },
+            {
+                "title": "13. Stress Management",
+                "duration": "Section 2",
+                "embed_url": (
+                    "https://player.mediadelivery.net/embed/706368/"
+                    "c6d1e8a4-c4c5-4419-98b4-389dce26d4b5"
+                ),
+            },
+            {
+                "title": "14. Mindset",
+                "duration": "Section 2",
+                "embed_url": (
+                    "https://player.mediadelivery.net/embed/706368/"
+                    "8210e99c-03e1-4cce-bc7d-a2d386c3ed22"
+                ),
+            },
+            {
+                "title": "15. Summary",
+                "duration": "Section 2",
+                "embed_url": (
+                    "https://player.mediadelivery.net/embed/706368/"
+                    "2ad9c38a-fe1e-4bc6-a455-4b965df69bff"
                 ),
             },
         ],
