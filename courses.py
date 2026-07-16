@@ -1,6 +1,90 @@
 """Course catalog for the shop. Embed URLs use Bunny Stream."""
 
 COURSES = {
+    "easiest-way-to-lose-weight": {
+        "id": "easiest-way-to-lose-weight",
+        "title": "The Easiest Way to Lose Weight",
+        "price_cents": 1600,  # $16.00 USD
+        "currency": "usd",
+        "thumbnail": "images/easiest-way-course.jpg",
+        "eyebrow": "Direct access — skip Udemy login & subscription",
+        "short_description": (
+            "Buy direct on this site and start watching immediately — "
+            "no Udemy account, no platform subscription."
+        ),
+        "description": (
+            "Your full direct-access course on this website. "
+            "Skip the Udemy login and subscription process — checkout once "
+            "and watch here. Section 1 (8 lessons) is ready now; more "
+            "sections will be added to your access as they go live."
+        ),
+        "lessons": [
+            {
+                "title": "1. Intro",
+                "duration": "Section 1",
+                "embed_url": (
+                    "https://player.mediadelivery.net/embed/706368/"
+                    "af2fb2e3-cd51-48cd-adbb-c9699bf685c4"
+                ),
+            },
+            {
+                "title": "2. Carbs",
+                "duration": "Section 1",
+                "embed_url": (
+                    "https://player.mediadelivery.net/embed/706368/"
+                    "fe8971e4-ee91-4451-b2e3-264595e791ec"
+                ),
+            },
+            {
+                "title": "3. Fiber",
+                "duration": "Section 1",
+                "embed_url": (
+                    "https://player.mediadelivery.net/embed/706368/"
+                    "e68bb146-7fce-4bb1-a282-72683297ee0e"
+                ),
+            },
+            {
+                "title": "4. Protein",
+                "duration": "Section 1",
+                "embed_url": (
+                    "https://player.mediadelivery.net/embed/706368/"
+                    "29e1ce27-7ac4-41d8-8043-1d03dce8843c"
+                ),
+            },
+            {
+                "title": "5. Fats",
+                "duration": "Section 1",
+                "embed_url": (
+                    "https://player.mediadelivery.net/embed/706368/"
+                    "d1ae98ae-043f-4036-a809-5a97706b1be4"
+                ),
+            },
+            {
+                "title": "6. Vitamins & Minerals",
+                "duration": "Section 1",
+                "embed_url": (
+                    "https://player.mediadelivery.net/embed/706368/"
+                    "836a588d-5fc1-4f64-a54c-0edc7e5015dd"
+                ),
+            },
+            {
+                "title": "7. Water",
+                "duration": "Section 1",
+                "embed_url": (
+                    "https://player.mediadelivery.net/embed/706368/"
+                    "05b8db06-e571-45f0-8278-06368b53bd9a"
+                ),
+            },
+            {
+                "title": "8. Summary",
+                "duration": "Section 1",
+                "embed_url": (
+                    "https://player.mediadelivery.net/embed/706368/"
+                    "153b6af0-c5f1-458b-9358-166d7c4f7d08"
+                ),
+            },
+        ],
+    },
     "3-day-gut-health": {
         "id": "3-day-gut-health",
         "title": "3-Day Gut Health Challenge",

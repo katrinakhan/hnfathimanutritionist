@@ -32,6 +32,9 @@
                 >
             {% endif %}
             <h1>{{ course.title }}</h1>
+            {% if course.eyebrow %}
+            <p class="course-detail-eyebrow">{{ course.eyebrow }}</p>
+            {% endif %}
             <p class="subtitle">{{ course.description }}</p>
             <p class="course-price-large">${{ '%.2f'|format(course.price_cents / 100) }} USD</p>
             {% if course.discount_code and not owned %}

@@ -128,7 +128,9 @@
                     >
                     {% endif %}
                     <div class="course-feature-copy">
-                        <p class="course-feature-eyebrow">Direct checkout on this website</p>
+                        <p class="course-feature-eyebrow">
+                            {{ course.eyebrow or "Direct checkout on this website" }}
+                        </p>
                         <h3>{{ course.title }}</h3>
                         <p>{{ course.short_description }}</p>
                         <span class="course-feature-price">${{ '%.2f'|format(course.price_cents / 100) }}</span>
