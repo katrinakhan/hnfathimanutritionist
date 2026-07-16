@@ -104,8 +104,9 @@ def ensure_course_promo(course: dict) -> None:
 
     existing = stripe.PromotionCode.list(code=code, limit=1)
     if not existing.data:
+        # Newer Stripe API: coupon goes under promotion{}, not top-level coupon=
         stripe.PromotionCode.create(
-            coupon=coupon_id,
+            promotion={"type": "coupon", "coupon": coupon_id},
             code=code,
             metadata={"course_id": course["id"]},
         )
@@ -149,7 +150,10 @@ def create_checkout(course_id):
     base = public_base_url()
     try:
         if course.get("discount_code"):
-            ensure_course_promo(course)
+            try:
+                ensure_course_promo(course)
+            except Exception:
+                app.logger.exception("Could not ensure Stripe promo code; checkout continues")
 
         session_params = {
             "mode": "payment",
