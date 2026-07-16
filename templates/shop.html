@@ -40,6 +40,9 @@
                         <h2>{{ course.title }}</h2>
                         <p>{{ course.short_description }}</p>
                         <p class="course-meta">{{ course.lessons|length }} lessons</p>
+                        {% if course.discount_code %}
+                        <p class="course-meta">Code <strong>{{ course.discount_code }}</strong> = {{ course.discount_percent }}% off</p>
+                        {% endif %}
                     </div>
                     <div class="course-listing-actions">
                         <p class="course-price">${{ '%.2f'|format(course.price_cents / 100) }}</p>

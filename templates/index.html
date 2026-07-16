@@ -117,20 +117,31 @@
         <section id="courses" class="courses-banner-section">
             <h2 class="courses-banner-heading">Online Courses</h2>
             <p class="courses-banner-tagline">Feel better from the inside out — start with one simple plan.</p>
-            <a class="course-feature-card" href="{{ url_for('course_detail', course_id='3-day-gut-health') }}">
-                <img
-                    src="{{ img }}gut-health-course.jpg"
-                    alt="3-Day Gut Health Challenge course thumbnail"
-                    class="course-feature-thumb"
-                >
-                <div class="course-feature-copy">
-                    <p class="course-feature-eyebrow">Direct checkout on this website</p>
-                    <h3>3-Day Gut Health Challenge</h3>
-                    <p>Three short video lessons you can start today — reset habits and support your gut health.</p>
-                    <span class="course-feature-price">$10</span>
-                    <span class="cta-button course-feature-cta">Buy direct — one-click checkout</span>
-                </div>
-            </a>
+            <div class="course-feature-grid">
+                {% for course in courses %}
+                <a class="course-feature-card" href="{{ url_for('course_detail', course_id=course.id) }}">
+                    {% if course.thumbnail %}
+                    <img
+                        src="{{ url_for('static', filename=course.thumbnail) }}"
+                        alt="{{ course.title }}"
+                        class="course-feature-thumb"
+                    >
+                    {% endif %}
+                    <div class="course-feature-copy">
+                        <p class="course-feature-eyebrow">Direct checkout on this website</p>
+                        <h3>{{ course.title }}</h3>
+                        <p>{{ course.short_description }}</p>
+                        <span class="course-feature-price">${{ '%.2f'|format(course.price_cents / 100) }}</span>
+                        {% if course.discount_code %}
+                        <p class="course-feature-promo">
+                            Use code <strong>{{ course.discount_code }}</strong> for {{ course.discount_percent }}% off at checkout
+                        </p>
+                        {% endif %}
+                        <span class="cta-button course-feature-cta">Buy direct — one-click checkout</span>
+                    </div>
+                </a>
+                {% endfor %}
+            </div>
             <p class="courses-banner-more">
                 <a href="{{ url_for('shop') }}">See all courses →</a>
             </p>

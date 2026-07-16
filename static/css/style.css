@@ -680,13 +680,20 @@ h1 {
     margin: 0 0 24px;
     color: #f0f0f0;
 }
+.course-feature-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
 .course-feature-card {
     display: flex;
-    flex-wrap: wrap;
-    gap: 24px;
-    align-items: center;
-    max-width: 960px;
-    margin: 0 auto;
+    flex-direction: column;
+    gap: 16px;
+    align-items: stretch;
+    max-width: none;
+    margin: 0;
     padding: 16px;
     background: #1c1c1c;
     border-radius: 12px;
@@ -700,8 +707,8 @@ h1 {
     box-shadow: 0 8px 24px rgba(229, 57, 53, 0.35);
 }
 .course-feature-thumb {
-    flex: 1 1 280px;
-    max-width: 420px;
+    flex: none;
+    max-width: none;
     width: 100%;
     border-radius: 8px;
     display: block;
@@ -709,8 +716,22 @@ h1 {
     aspect-ratio: 16 / 9;
 }
 .course-feature-copy {
-    flex: 1 1 260px;
+    flex: none;
     text-align: left;
+}
+.course-feature-promo {
+    margin: 0 0 12px;
+    color: #ffcc80;
+    font-size: 14px;
+}
+.course-promo-note {
+    text-align: center;
+    margin: 0 0 16px;
+    padding: 10px 14px;
+    background: #fff3e0;
+    border-radius: 8px;
+    color: #e65100;
+    font-size: 15px;
 }
 .course-feature-eyebrow {
     margin: 0 0 8px;
@@ -783,6 +804,9 @@ h1 {
         font-size: 14px;
         font-weight: 800;
         padding: 14px 8px;
+    }
+    .course-feature-grid {
+        grid-template-columns: 1fr;
     }
     .courses-banner-heading {
         font-size: 1.6rem;

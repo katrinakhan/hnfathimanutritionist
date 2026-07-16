@@ -4,9 +4,11 @@ COURSES = {
     "3-day-gut-health": {
         "id": "3-day-gut-health",
         "title": "3-Day Gut Health Challenge",
-        "price_cents": 1000,  # $10.00 USD
+        "price_cents": 900,  # $9.00 USD
         "currency": "usd",
         "thumbnail": "images/gut-health-course.jpg",
+        "discount_percent": 35,
+        "discount_code": "GUT35",
         "short_description": (
             "A simple 3-day video challenge to support gut health — "
             "watch one lesson each day and take action."
@@ -39,6 +41,31 @@ COURSES = {
                 "embed_url": (
                     "https://player.mediadelivery.net/embed/705527/"
                     "5ac8c762-6ddf-40b6-99a4-9fa1813567e2"
+                ),
+            },
+        ],
+    },
+    "obesity-the-new-pandemic": {
+        "id": "obesity-the-new-pandemic",
+        "title": "Obesity the New Pandemic",
+        "price_cents": 300,  # $3.00 USD
+        "currency": "usd",
+        "thumbnail": "images/obesity-pandemic-course.png",
+        "short_description": (
+            "Top 3 ways to combat obesity — a focused video lesson "
+            "you can watch in one sitting."
+        ),
+        "description": (
+            "Obesity the New Pandemic: Top 3 Ways to Combat It. "
+            "A concise, actionable video course with lifetime access after purchase."
+        ),
+        "lessons": [
+            {
+                "title": "Obesity the New Pandemic — Top 3 Ways to Combat It",
+                "duration": "Video lesson",
+                "embed_url": (
+                    "https://player.mediadelivery.net/embed/706356/"
+                    "7b63c07d-5a49-44fd-a980-aebedafd9e80"
                 ),
             },
         ],

@@ -83,9 +83,37 @@ def _stripe_error_message(exc: Exception) -> str:
     return getattr(exc, "user_message", None) or str(exc)
 
 
+def ensure_course_promo(course: dict) -> None:
+    """Create Stripe coupon + promotion code for a course if configured."""
+    code = course.get("discount_code")
+    percent = course.get("discount_percent")
+    if not code or not percent or not stripe.api_key:
+        return
+
+    coupon_id = f"coupon_{course['id']}_{percent}off".replace("-", "_")[:40]
+    try:
+        stripe.Coupon.retrieve(coupon_id)
+    except stripe.InvalidRequestError:
+        stripe.Coupon.create(
+            id=coupon_id,
+            percent_off=percent,
+            duration="once",
+            name=f"{percent}% off {course['title']}"[:40],
+            metadata={"course_id": course["id"]},
+        )
+
+    existing = stripe.PromotionCode.list(code=code, limit=1)
+    if not existing.data:
+        stripe.PromotionCode.create(
+            coupon=coupon_id,
+            code=code,
+            metadata={"course_id": course["id"]},
+        )
+
+
 @app.route("/")
 def index():
-    return render_template("index.html")
+    return render_template("index.html", courses=all_courses())
 
 
 @app.route("/shop")
@@ -120,10 +148,13 @@ def create_checkout(course_id):
 
     base = public_base_url()
     try:
-        checkout_session = stripe.checkout.Session.create(
-            mode="payment",
-            client_reference_id=course_id,
-            line_items=[
+        if course.get("discount_code"):
+            ensure_course_promo(course)
+
+        session_params = {
+            "mode": "payment",
+            "client_reference_id": course_id,
+            "line_items": [
                 {
                     "price_data": {
                         "currency": course["currency"],
@@ -136,12 +167,16 @@ def create_checkout(course_id):
                     "quantity": 1,
                 }
             ],
-            success_url=(
+            "success_url": (
                 f"{base}{url_for('checkout_success')}?session_id={{CHECKOUT_SESSION_ID}}"
             ),
-            cancel_url=f"{base}{url_for('course_detail', course_id=course_id)}",
-            metadata={"course_id": course_id},
-        )
+            "cancel_url": f"{base}{url_for('course_detail', course_id=course_id)}",
+            "metadata": {"course_id": course_id},
+        }
+        if course.get("discount_code"):
+            session_params["allow_promotion_codes"] = True
+
+        checkout_session = stripe.checkout.Session.create(**session_params)
     except Exception as exc:
         app.logger.exception("Stripe checkout create failed")
         flash(f"Checkout could not be started: {_stripe_error_message(exc)}", "error")

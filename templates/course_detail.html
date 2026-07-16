@@ -34,6 +34,12 @@
             <h1>{{ course.title }}</h1>
             <p class="subtitle">{{ course.description }}</p>
             <p class="course-price-large">${{ '%.2f'|format(course.price_cents / 100) }} USD</p>
+            {% if course.discount_code and not owned %}
+            <p class="course-promo-note">
+                Save {{ course.discount_percent }}%: enter code
+                <strong>{{ course.discount_code }}</strong> on the Stripe checkout page.
+            </p>
+            {% endif %}
 
             {% if owned %}
                 <a class="cta-button" href="{{ url_for('watch_course', course_id=course.id) }}">
