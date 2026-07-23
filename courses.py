@@ -15,7 +15,7 @@ COURSES = {
         "description": (
             "Your full direct-access course on this website. "
             "Skip the Udemy login and subscription process — checkout once "
-            "and watch here. Sections 1–7 are ready now; more "
+            "and watch here. Sections 1–8 are ready now; more "
             "sections will be added to your access as they go live."
         ),
         "lessons": [
@@ -377,6 +377,54 @@ COURSES = {
                 "embed_url": (
                     "https://player.mediadelivery.net/embed/706368/"
                     "297f4d20-e1fc-4cdd-b1ba-140b06ee9b27"
+                ),
+            },
+            {
+                "title": "46. Intro",
+                "duration": "Section 8",
+                "embed_url": (
+                    "https://player.mediadelivery.net/embed/706368/"
+                    "4ad96cf8-417d-4b4e-a1fb-657e88b11135"
+                ),
+            },
+            {
+                "title": "47. TDEE Calculation",
+                "duration": "Section 8",
+                "embed_url": (
+                    "https://player.mediadelivery.net/embed/706368/"
+                    "d42eefbe-7ecd-4c21-918f-b16aedaa5a28"
+                ),
+            },
+            {
+                "title": "48. Macronutrient Proportions",
+                "duration": "Section 8",
+                "embed_url": (
+                    "https://player.mediadelivery.net/embed/706368/"
+                    "a11b55e3-4005-4266-90c7-0245e7f3350c"
+                ),
+            },
+            {
+                "title": "49. Plate Method",
+                "duration": "Section 8",
+                "embed_url": (
+                    "https://player.mediadelivery.net/embed/706368/"
+                    "8a56ff79-27aa-44cb-a4c9-83f856f87c18"
+                ),
+            },
+            {
+                "title": "50. Grocery Shopping",
+                "duration": "Section 8",
+                "embed_url": (
+                    "https://player.mediadelivery.net/embed/706368/"
+                    "76449597-7daf-409d-b1a7-1fbafdee7fda"
+                ),
+            },
+            {
+                "title": "51. A Typical Day's Diet",
+                "duration": "Section 8",
+                "embed_url": (
+                    "https://player.mediadelivery.net/embed/706368/"
+                    "97a317ed-09b5-4a3d-9793-55ad1f9b4275"
                 ),
             },
         ],
