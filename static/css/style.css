@@ -579,6 +579,23 @@ h1 {
     flex-direction: column;
     gap: 32px;
 }
+.course-section-heading {
+    margin: 16px 0 8px;
+    padding: 14px 18px;
+    background: #111;
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    border-radius: 10px;
+    border-left: 6px solid #E53935;
+}
+.lesson-title-heading {
+    margin: 0 0 8px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-align: left;
+}
 .lesson-player-block h2 {
     margin-bottom: 4px;
     font-size: 1.35rem;
@@ -600,15 +617,18 @@ h1 {
 }
 .course-downloads {
     max-width: 900px;
-    margin: 0 auto 36px;
+    margin: 8px 0 24px;
     padding: 20px 24px;
     background: #f8f6f3;
     border-radius: 12px;
     border: 2px solid #E53935;
 }
-.course-downloads h2 {
+.course-downloads h2,
+.downloads-heading {
     margin: 0 0 14px;
-    text-align: center;
+    text-align: left;
+    font-size: 1.25rem;
+    font-weight: 800;
 }
 .download-list {
     list-style: none;
@@ -630,14 +650,18 @@ h1 {
 .download-meta {
     font-size: 13px;
     color: #555;
-    min-width: 90px;
+    font-weight: 700;
+    white-space: nowrap;
 }
 .download-link {
-    color: #E53935;
+    color: #111;
     font-weight: bold;
     text-decoration: none;
+    text-align: left;
+    flex: 1 1 auto;
 }
 .download-link:hover {
+    color: #E53935;
     text-decoration: underline;
 }
 .curriculum-downloads-heading {

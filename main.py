@@ -266,6 +266,28 @@ def preview_course(course_id):
     return redirect(url_for("watch_course", course_id=course_id))
 
 
+def group_course_sections(course: dict) -> list[dict]:
+    """Group lessons/resources by section name for the watch page."""
+    sections: dict[str, dict] = {}
+    order: list[str] = []
+
+    for lesson in course.get("lessons") or []:
+        name = lesson.get("duration") or "Course"
+        if name not in sections:
+            sections[name] = {"name": name, "lessons": [], "resources": []}
+            order.append(name)
+        sections[name]["lessons"].append(lesson)
+
+    for resource in course.get("resources") or []:
+        name = resource.get("section") or "Course"
+        if name not in sections:
+            sections[name] = {"name": name, "lessons": [], "resources": []}
+            order.append(name)
+        sections[name]["resources"].append(resource)
+
+    return [sections[name] for name in order]
+
+
 @app.route("/my-courses/<course_id>")
 def watch_course(course_id):
     course = get_course(course_id)
@@ -283,7 +305,11 @@ def watch_course(course_id):
         flash("Please purchase this course to watch the lessons.", "error")
         return redirect(url_for("course_detail", course_id=course_id))
 
-    return render_template("watch_course.html", course=course)
+    return render_template(
+        "watch_course.html",
+        course=course,
+        sections=group_course_sections(course),
+    )
 
 
 if __name__ == "__main__":

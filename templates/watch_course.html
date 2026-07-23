@@ -17,30 +17,13 @@
         <h1 class="shop-title">{{ course.title }}</h1>
         <p class="shop-intro">Your purchased lessons</p>
 
-        {% if course.resources %}
-        <section class="course-downloads">
-            <h2>Downloads</h2>
-            <ul class="download-list">
-                {% for resource in course.resources %}
-                <li>
-                    <span class="download-meta">{{ resource.section }}</span>
-                    <a
-                        class="download-link"
-                        href="{{ url_for('static', filename=resource.file) }}"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >{{ resource.title }} (PDF)</a>
-                </li>
-                {% endfor %}
-            </ul>
-        </section>
-        {% endif %}
-
         <div class="lesson-players">
-            {% for lesson in course.lessons %}
+            {% for section in sections %}
+                <h2 class="course-section-heading">{{ section.name }}</h2>
+
+                {% for lesson in section.lessons %}
                 <section class="lesson-player-block">
-                    <h2>{{ lesson.title }}</h2>
-                    <p class="lesson-duration">{{ lesson.duration }}</p>
+                    <h3 class="lesson-title-heading">{{ lesson.title }}</h3>
                     <div class="bunny-embed">
                         <iframe
                             src="{{ lesson.embed_url }}?autoplay=false&preload=true"
@@ -51,6 +34,26 @@
                         ></iframe>
                     </div>
                 </section>
+                {% endfor %}
+
+                {% if section.resources %}
+                <section class="course-downloads">
+                    <h3 class="downloads-heading">Downloads</h3>
+                    <ul class="download-list">
+                        {% for resource in section.resources %}
+                        <li>
+                            <a
+                                class="download-link"
+                                href="{{ url_for('static', filename=resource.file) }}"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >{{ resource.title }}</a>
+                            <span class="download-meta">PDF</span>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </section>
+                {% endif %}
             {% endfor %}
         </div>
     </div>
