@@ -15,8 +15,7 @@ COURSES = {
         "description": (
             "Your full direct-access course on this website. "
             "Skip the Udemy login and subscription process — checkout once "
-            "and watch here. Sections 1–11 are ready now; more "
-            "sections will be added to your access as they go live."
+            "and watch here. Sections 1–12 are included with lifetime access."
         ),
         "lessons": [
             {
@@ -521,6 +520,30 @@ COURSES = {
                 "embed_url": (
                     "https://player.mediadelivery.net/embed/706368/"
                     "3fc646a1-635a-43e3-acc5-d3b501f9286c"
+                ),
+            },
+            {
+                "title": "73. Congrats & Thank You",
+                "duration": "Section 12",
+                "embed_url": (
+                    "https://player.mediadelivery.net/embed/706368/"
+                    "6776ca41-28f6-4195-86c1-f41cb4d6e0c5"
+                ),
+            },
+            {
+                "title": "74. Meditation",
+                "duration": "Section 12",
+                "embed_url": (
+                    "https://player.mediadelivery.net/embed/706368/"
+                    "8e56762c-7228-4f12-b58e-5edb75f54102"
+                ),
+            },
+            {
+                "title": "75. Timeless Beauties with Berries",
+                "duration": "Section 12",
+                "embed_url": (
+                    "https://player.mediadelivery.net/embed/706368/"
+                    "410b9909-5ade-4cb9-ae64-0ffe504c2653"
                 ),
             },
         ],
