@@ -15,7 +15,7 @@ COURSES = {
         "description": (
             "Your full direct-access course on this website. "
             "Skip the Udemy login and subscription process — checkout once "
-            "and watch here. Sections 1–4 are ready now; more "
+            "and watch here. Sections 1–5 are ready now; more "
             "sections will be added to your access as they go live."
         ),
         "lessons": [
@@ -233,6 +233,54 @@ COURSES = {
                 "embed_url": (
                     "https://player.mediadelivery.net/embed/706368/"
                     "12aad289-bb52-4169-91e9-e5806f913f6f"
+                ),
+            },
+            {
+                "title": "28. Intro",
+                "duration": "Section 5",
+                "embed_url": (
+                    "https://player.mediadelivery.net/embed/706368/"
+                    "0ae8e670-caca-4523-ad12-8b6f935b83f2"
+                ),
+            },
+            {
+                "title": "29. Building Muscle to Boost Metabolism",
+                "duration": "Section 5",
+                "embed_url": (
+                    "https://player.mediadelivery.net/embed/706368/"
+                    "d685e672-2707-4d58-bd83-6a6757685e07"
+                ),
+            },
+            {
+                "title": "30. Stimulating Brown Fat",
+                "duration": "Section 5",
+                "embed_url": (
+                    "https://player.mediadelivery.net/embed/706368/"
+                    "c0bfac43-c0f6-4fea-b2aa-b2e228cff26a"
+                ),
+            },
+            {
+                "title": "31. Metabolism Boosting Foods",
+                "duration": "Section 5",
+                "embed_url": (
+                    "https://player.mediadelivery.net/embed/706368/"
+                    "a5d9e061-b29f-4c72-97d3-7c01092dccb5"
+                ),
+            },
+            {
+                "title": "32. Sleep & Hydration",
+                "duration": "Section 5",
+                "embed_url": (
+                    "https://player.mediadelivery.net/embed/706368/"
+                    "60841ee3-8089-4ee5-970b-022b331680ae"
+                ),
+            },
+            {
+                "title": "33. Summary",
+                "duration": "Section 5",
+                "embed_url": (
+                    "https://player.mediadelivery.net/embed/706368/"
+                    "701c8f82-aeaf-412a-9e82-cbac31804355"
                 ),
             },
         ],
