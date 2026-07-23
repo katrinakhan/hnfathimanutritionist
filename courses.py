@@ -15,7 +15,7 @@ COURSES = {
         "description": (
             "Your full direct-access course on this website. "
             "Skip the Udemy login and subscription process — checkout once "
-            "and watch here. Sections 1–5 are ready now; more "
+            "and watch here. Sections 1–6 are ready now; more "
             "sections will be added to your access as they go live."
         ),
         "lessons": [
@@ -281,6 +281,54 @@ COURSES = {
                 "embed_url": (
                     "https://player.mediadelivery.net/embed/706368/"
                     "701c8f82-aeaf-412a-9e82-cbac31804355"
+                ),
+            },
+            {
+                "title": "34. Intro",
+                "duration": "Section 6",
+                "embed_url": (
+                    "https://player.mediadelivery.net/embed/706368/"
+                    "7fd675c4-7729-4b79-afbf-db9a6301210f"
+                ),
+            },
+            {
+                "title": "35. All Fats Are Bad & Make You Gain Weight",
+                "duration": "Section 6",
+                "embed_url": (
+                    "https://player.mediadelivery.net/embed/706368/"
+                    "22936286-e80b-4c55-aac8-bba1773cd7db"
+                ),
+            },
+            {
+                "title": "36. Fruits Are Great for You",
+                "duration": "Section 6",
+                "embed_url": (
+                    "https://player.mediadelivery.net/embed/706368/"
+                    "18e17e25-116f-4b48-ba44-495fe31bdec5"
+                ),
+            },
+            {
+                "title": "37. You Can Exercise Your Way to Weight Loss",
+                "duration": "Section 6",
+                "embed_url": (
+                    "https://player.mediadelivery.net/embed/706368/"
+                    "9a2a548c-bc45-4f52-9aab-ffbbfb6ab368"
+                ),
+            },
+            {
+                "title": "38. All Calories Are Equal",
+                "duration": "Section 6",
+                "embed_url": (
+                    "https://player.mediadelivery.net/embed/706368/"
+                    "653ad240-260b-40a5-bf44-c989c402eec1"
+                ),
+            },
+            {
+                "title": "39. Summary",
+                "duration": "Section 6",
+                "embed_url": (
+                    "https://player.mediadelivery.net/embed/706368/"
+                    "31da7d07-2a6d-4105-85d2-9749b4252942"
                 ),
             },
         ],
