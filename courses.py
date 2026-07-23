@@ -15,7 +15,7 @@ COURSES = {
         "description": (
             "Your full direct-access course on this website. "
             "Skip the Udemy login and subscription process — checkout once "
-            "and watch here. Sections 1 and 2 are ready now; more "
+            "and watch here. Sections 1–3 are ready now; more "
             "sections will be added to your access as they go live."
         ),
         "lessons": [
@@ -137,6 +137,46 @@ COURSES = {
                 "embed_url": (
                     "https://player.mediadelivery.net/embed/706368/"
                     "2ad9c38a-fe1e-4bc6-a455-4b965df69bff"
+                ),
+            },
+            {
+                "title": "16. Intro",
+                "duration": "Section 3",
+                "embed_url": (
+                    "https://player.mediadelivery.net/embed/706368/"
+                    "aa583398-7a43-4194-934e-72e2a3adbb80"
+                ),
+            },
+            {
+                "title": "17. Goal Setting",
+                "duration": "Section 3",
+                "embed_url": (
+                    "https://player.mediadelivery.net/embed/706368/"
+                    "27f0cc47-d0ca-4f66-9cb1-ee03165799a6"
+                ),
+            },
+            {
+                "title": "18. Habits",
+                "duration": "Section 3",
+                "embed_url": (
+                    "https://player.mediadelivery.net/embed/706368/"
+                    "b1af845b-77b4-4eb3-9b83-59912b2df21e"
+                ),
+            },
+            {
+                "title": "19. Environment & Self-Sabotage",
+                "duration": "Section 3",
+                "embed_url": (
+                    "https://player.mediadelivery.net/embed/706368/"
+                    "2e6cdc36-a992-470c-90fa-08a0c736a919"
+                ),
+            },
+            {
+                "title": "20. Summary",
+                "duration": "Section 3",
+                "embed_url": (
+                    "https://player.mediadelivery.net/embed/706368/"
+                    "afd8ea14-a0a5-4ec6-9864-fedd1f73df50"
                 ),
             },
         ],
