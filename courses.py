@@ -15,7 +15,7 @@ COURSES = {
         "description": (
             "Your full direct-access course on this website. "
             "Skip the Udemy login and subscription process — checkout once "
-            "and watch here. Sections 1–8 are ready now; more "
+            "and watch here. Sections 1–9 are ready now; more "
             "sections will be added to your access as they go live."
         ),
         "lessons": [
@@ -425,6 +425,54 @@ COURSES = {
                 "embed_url": (
                     "https://player.mediadelivery.net/embed/706368/"
                     "97a317ed-09b5-4a3d-9793-55ad1f9b4275"
+                ),
+            },
+            {
+                "title": "53. Intro",
+                "duration": "Section 9",
+                "embed_url": (
+                    "https://player.mediadelivery.net/embed/706368/"
+                    "5ba0e822-3627-412b-b859-94bac58edf0c"
+                ),
+            },
+            {
+                "title": "54. How to Break the Fast",
+                "duration": "Section 9",
+                "embed_url": (
+                    "https://player.mediadelivery.net/embed/706368/"
+                    "ad44ad9c-c378-4db6-8f48-7ece365a3bb1"
+                ),
+            },
+            {
+                "title": "55. How to Prolong the Fast",
+                "duration": "Section 9",
+                "embed_url": (
+                    "https://player.mediadelivery.net/embed/706368/"
+                    "1e67b584-a64c-465c-9775-bba4adfec246"
+                ),
+            },
+            {
+                "title": "56. Different Types of Fast",
+                "duration": "Section 9",
+                "embed_url": (
+                    "https://player.mediadelivery.net/embed/706368/"
+                    "efb346bd-4ea1-45e5-ad90-d5e968e12136"
+                ),
+            },
+            {
+                "title": "57. How Women Should Fast",
+                "duration": "Section 9",
+                "embed_url": (
+                    "https://player.mediadelivery.net/embed/706368/"
+                    "16f36188-a7e6-48df-b1f1-997616cf922d"
+                ),
+            },
+            {
+                "title": "58. Summary",
+                "duration": "Section 9",
+                "embed_url": (
+                    "https://player.mediadelivery.net/embed/706368/"
+                    "56d7c608-0419-4098-a4c6-0710966bcf83"
                 ),
             },
         ],
