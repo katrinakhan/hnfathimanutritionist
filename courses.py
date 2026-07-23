@@ -15,7 +15,7 @@ COURSES = {
         "description": (
             "Your full direct-access course on this website. "
             "Skip the Udemy login and subscription process — checkout once "
-            "and watch here. Sections 1–6 are ready now; more "
+            "and watch here. Sections 1–7 are ready now; more "
             "sections will be added to your access as they go live."
         ),
         "lessons": [
@@ -329,6 +329,54 @@ COURSES = {
                 "embed_url": (
                     "https://player.mediadelivery.net/embed/706368/"
                     "31da7d07-2a6d-4105-85d2-9749b4252942"
+                ),
+            },
+            {
+                "title": "40. Intro",
+                "duration": "Section 7",
+                "embed_url": (
+                    "https://player.mediadelivery.net/embed/706368/"
+                    "c62d04e1-80ed-44ca-9c25-2f653637fe33"
+                ),
+            },
+            {
+                "title": "41. Superfoods",
+                "duration": "Section 7",
+                "embed_url": (
+                    "https://player.mediadelivery.net/embed/706368/"
+                    "ad9561aa-0cf5-4709-bad7-9ecc3bfbc114"
+                ),
+            },
+            {
+                "title": "42. Skincare",
+                "duration": "Section 7",
+                "embed_url": (
+                    "https://player.mediadelivery.net/embed/706368/"
+                    "8df12a53-72e3-46de-83e3-b94d0575730b"
+                ),
+            },
+            {
+                "title": "43. Hot & Cold Therapies",
+                "duration": "Section 7",
+                "embed_url": (
+                    "https://player.mediadelivery.net/embed/706368/"
+                    "58dce542-9d42-4b1b-b577-e62569c08fe4"
+                ),
+            },
+            {
+                "title": "44. Supplements for Anti-Ageing",
+                "duration": "Section 7",
+                "embed_url": (
+                    "https://player.mediadelivery.net/embed/706368/"
+                    "7b9e4ca3-6971-45b5-9642-a9b4e86428f4"
+                ),
+            },
+            {
+                "title": "45. Summary",
+                "duration": "Section 7",
+                "embed_url": (
+                    "https://player.mediadelivery.net/embed/706368/"
+                    "297f4d20-e1fc-4cdd-b1ba-140b06ee9b27"
                 ),
             },
         ],
