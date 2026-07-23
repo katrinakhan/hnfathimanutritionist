@@ -15,7 +15,7 @@ COURSES = {
         "description": (
             "Your full direct-access course on this website. "
             "Skip the Udemy login and subscription process — checkout once "
-            "and watch here. Sections 1–9 are ready now; more "
+            "and watch here. Sections 1–10 are ready now; more "
             "sections will be added to your access as they go live."
         ),
         "lessons": [
@@ -473,6 +473,22 @@ COURSES = {
                 "embed_url": (
                     "https://player.mediadelivery.net/embed/706368/"
                     "56d7c608-0419-4098-a4c6-0710966bcf83"
+                ),
+            },
+            {
+                "title": "59. Intro",
+                "duration": "Section 10",
+                "embed_url": (
+                    "https://player.mediadelivery.net/embed/706368/"
+                    "208480f2-d5fa-43d0-93db-594eee0448a4"
+                ),
+            },
+            {
+                "title": "60. Tips, Tricks, Hacks & Secrets",
+                "duration": "Section 10",
+                "embed_url": (
+                    "https://player.mediadelivery.net/embed/706368/"
+                    "3c2ddf6c-c7cf-4d6a-825c-2c27f1e2f1cd"
                 ),
             },
         ],
