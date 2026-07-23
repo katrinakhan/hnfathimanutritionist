@@ -1,4 +1,5 @@
 import os
+import secrets
 import traceback
 from datetime import timedelta
 
@@ -29,6 +30,7 @@ app.config["SESSION_COOKIE_SECURE"] = _is_production
 app.config["SESSION_COOKIE_SAMESITE"] = "Lax"
 
 stripe.api_key = os.environ.get("STRIPE_SECRET_KEY", "")
+PREVIEW_SECRET = os.environ.get("PREVIEW_SECRET", "").strip()
 ACCESS_MAX_AGE = 60 * 60 * 24 * 365  # 1 year
 
 
@@ -42,6 +44,17 @@ def grant_course_access(course_id: str) -> None:
     if course_id not in owned:
         owned.append(course_id)
         session["owned_courses"] = owned
+
+
+def grant_all_course_access() -> None:
+    for course in all_courses():
+        grant_course_access(course["id"])
+
+
+def preview_key_is_valid(key: str | None) -> bool:
+    if not PREVIEW_SECRET or not key:
+        return False
+    return secrets.compare_digest(key, PREVIEW_SECRET)
 
 
 def has_course_access(course_id: str) -> bool:
@@ -232,11 +245,35 @@ def checkout_success():
         return redirect(url_for("shop"))
 
 
+@app.route("/preview")
+def preview_all_courses():
+    """Private owner unlock — set PREVIEW_SECRET in Render Environment."""
+    if not preview_key_is_valid(request.args.get("key")):
+        abort(404)
+    grant_all_course_access()
+    flash("Preview unlocked for all courses on this browser.", "message")
+    return redirect(url_for("shop"))
+
+
+@app.route("/preview/<course_id>")
+def preview_course(course_id):
+    course = get_course(course_id)
+    if not course:
+        abort(404)
+    if not preview_key_is_valid(request.args.get("key")):
+        abort(404)
+    grant_course_access(course_id)
+    return redirect(url_for("watch_course", course_id=course_id))
+
+
 @app.route("/my-courses/<course_id>")
 def watch_course(course_id):
     course = get_course(course_id)
     if not course:
         abort(404)
+
+    if preview_key_is_valid(request.args.get("preview")):
+        grant_course_access(course_id)
 
     token = request.args.get("access")
     if token and verify_access_token(token, course_id):
