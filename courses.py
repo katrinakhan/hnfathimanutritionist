@@ -15,7 +15,7 @@ COURSES = {
         "description": (
             "Your full direct-access course on this website. "
             "Skip the Udemy login and subscription process — checkout once "
-            "and watch here. Sections 1–3 are ready now; more "
+            "and watch here. Sections 1–4 are ready now; more "
             "sections will be added to your access as they go live."
         ),
         "lessons": [
@@ -177,6 +177,62 @@ COURSES = {
                 "embed_url": (
                     "https://player.mediadelivery.net/embed/706368/"
                     "afd8ea14-a0a5-4ec6-9864-fedd1f73df50"
+                ),
+            },
+            {
+                "title": "21. Intro",
+                "duration": "Section 4",
+                "embed_url": (
+                    "https://player.mediadelivery.net/embed/706368/"
+                    "eb7e5f38-7736-4269-96fc-52a3f763da76"
+                ),
+            },
+            {
+                "title": "22. Primary Detoxing Organs in the Human Body",
+                "duration": "Section 4",
+                "embed_url": (
+                    "https://player.mediadelivery.net/embed/706368/"
+                    "a8b4b493-629e-40d1-abd2-a9d96fc45971"
+                ),
+            },
+            {
+                "title": "23. Intro",
+                "duration": "Section 4",
+                "embed_url": (
+                    "https://player.mediadelivery.net/embed/706368/"
+                    "c9270345-34ad-4819-a6fe-db407da2cb2b"
+                ),
+            },
+            {
+                "title": "24. Some Ways to Avoid Toxins",
+                "duration": "Section 4",
+                "embed_url": (
+                    "https://player.mediadelivery.net/embed/706368/"
+                    "ab4b5233-ceae-4f50-a931-c25959b2340f"
+                ),
+            },
+            {
+                "title": "25. Detox Programs Using Diets",
+                "duration": "Section 4",
+                "embed_url": (
+                    "https://player.mediadelivery.net/embed/706368/"
+                    "c74b1044-cfd9-4c08-9eac-131a72e3e6da"
+                ),
+            },
+            {
+                "title": "26. Supplements for Detoxing",
+                "duration": "Section 4",
+                "embed_url": (
+                    "https://player.mediadelivery.net/embed/706368/"
+                    "73346231-279a-4c2f-b82c-982674480493"
+                ),
+            },
+            {
+                "title": "27. Summary",
+                "duration": "Section 4",
+                "embed_url": (
+                    "https://player.mediadelivery.net/embed/706368/"
+                    "12aad289-bb52-4169-91e9-e5806f913f6f"
                 ),
             },
         ],
