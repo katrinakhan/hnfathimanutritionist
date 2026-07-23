@@ -68,6 +68,17 @@
                     </li>
                 {% endfor %}
             </ol>
+            {% if course.resources %}
+            <h3 class="curriculum-downloads-heading">Recipe &amp; grocery downloads</h3>
+            <ul class="lesson-list download-preview-list">
+                {% for resource in course.resources %}
+                    <li>
+                        <span class="lesson-title">{{ resource.title }}</span>
+                        <span class="lesson-duration">PDF</span>
+                    </li>
+                {% endfor %}
+            </ul>
+            {% endif %}
         </section>
     </div>
 </body>

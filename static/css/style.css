@@ -598,6 +598,56 @@ h1 {
     height: 100%;
     border: 0;
 }
+.course-downloads {
+    max-width: 900px;
+    margin: 0 auto 36px;
+    padding: 20px 24px;
+    background: #f8f6f3;
+    border-radius: 12px;
+    border: 2px solid #E53935;
+}
+.course-downloads h2 {
+    margin: 0 0 14px;
+    text-align: center;
+}
+.download-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.download-list li {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #e5e0d8;
+}
+.download-list li:last-child {
+    border-bottom: none;
+}
+.download-meta {
+    font-size: 13px;
+    color: #555;
+    min-width: 90px;
+}
+.download-link {
+    color: #E53935;
+    font-weight: bold;
+    text-decoration: none;
+}
+.download-link:hover {
+    text-decoration: underline;
+}
+.curriculum-downloads-heading {
+    margin: 28px 0 12px;
+    text-align: center;
+    font-size: 1.2rem;
+}
+.download-preview-list {
+    list-style: none;
+}
 .flash-messages {
     max-width: 700px;
     margin: 0 auto 20px;

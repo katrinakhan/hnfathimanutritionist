@@ -15,7 +15,7 @@ COURSES = {
         "description": (
             "Your full direct-access course on this website. "
             "Skip the Udemy login and subscription process — checkout once "
-            "and watch here. Sections 1–10 are ready now; more "
+            "and watch here. Sections 1–11 are ready now; more "
             "sections will be added to your access as they go live."
         ),
         "lessons": [
@@ -490,6 +490,80 @@ COURSES = {
                     "https://player.mediadelivery.net/embed/706368/"
                     "3c2ddf6c-c7cf-4d6a-825c-2c27f1e2f1cd"
                 ),
+            },
+            {
+                "title": "61. Intro",
+                "duration": "Section 11",
+                "embed_url": (
+                    "https://player.mediadelivery.net/embed/706368/"
+                    "78610ad2-9935-4a27-b061-bfa8c2ab3554"
+                ),
+            },
+            {
+                "title": "70. Indian Healthy Cuisine Recipe 1 — Makhana (Fox Nuts)",
+                "duration": "Section 11",
+                "embed_url": (
+                    "https://player.mediadelivery.net/embed/706368/"
+                    "4fbe33a4-21cb-46e6-bb5a-f787810f50c9"
+                ),
+            },
+            {
+                "title": "71. Indian Healthy Cuisine Recipe 2 — Moong Dal Dosa",
+                "duration": "Section 11",
+                "embed_url": (
+                    "https://player.mediadelivery.net/embed/706368/"
+                    "1b242323-d154-452b-b108-49c9f4ebfc75"
+                ),
+            },
+            {
+                "title": "72. Indian Healthy Cuisine Recipe 3 — Bajra Rotis",
+                "duration": "Section 11",
+                "embed_url": (
+                    "https://player.mediadelivery.net/embed/706368/"
+                    "3fc646a1-635a-43e3-acc5-d3b501f9286c"
+                ),
+            },
+        ],
+        "resources": [
+            {
+                "title": "62. Detox Smoothie Recipes",
+                "section": "Section 11",
+                "file": "course-files/easiest-way/section-11/62.detoxsmoothierecipes.pdf",
+            },
+            {
+                "title": "63. Grocery List for Breakfast Recipes",
+                "section": "Section 11",
+                "file": "course-files/easiest-way/section-11/63.grocerylistforbreakfastrecipes.pdf",
+            },
+            {
+                "title": "64. Breakfast Recipes",
+                "section": "Section 11",
+                "file": "course-files/easiest-way/section-11/64.breakfastrecipes.pdf",
+            },
+            {
+                "title": "65. Grocery List for Lunch Recipes",
+                "section": "Section 11",
+                "file": "course-files/easiest-way/section-11/65.grocerylistforlunchrecipes.pdf",
+            },
+            {
+                "title": "66. Lunch Recipes",
+                "section": "Section 11",
+                "file": "course-files/easiest-way/section-11/66.lunchrecipes.pdf",
+            },
+            {
+                "title": "67. Grocery List for Dinner Recipes",
+                "section": "Section 11",
+                "file": "course-files/easiest-way/section-11/67.grocerylistfordinnerrecipes.pdf",
+            },
+            {
+                "title": "68. Dinner Recipes",
+                "section": "Section 11",
+                "file": "course-files/easiest-way/section-11/68.dinnerrecipes.pdf",
+            },
+            {
+                "title": "69. 10 Healthy Snacks Under 100 Calories",
+                "section": "Section 11",
+                "file": "course-files/easiest-way/section-11/69.10healthysnacksunder100calories.pdf",
             },
         ],
     },

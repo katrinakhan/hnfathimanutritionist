@@ -17,6 +17,25 @@
         <h1 class="shop-title">{{ course.title }}</h1>
         <p class="shop-intro">Your purchased lessons</p>
 
+        {% if course.resources %}
+        <section class="course-downloads">
+            <h2>Downloads</h2>
+            <ul class="download-list">
+                {% for resource in course.resources %}
+                <li>
+                    <span class="download-meta">{{ resource.section }}</span>
+                    <a
+                        class="download-link"
+                        href="{{ url_for('static', filename=resource.file) }}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >{{ resource.title }} (PDF)</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </section>
+        {% endif %}
+
         <div class="lesson-players">
             {% for lesson in course.lessons %}
                 <section class="lesson-player-block">
