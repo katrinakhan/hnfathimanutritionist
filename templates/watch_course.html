@@ -3,60 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Watch · {{ course.title }}</title>
+    {% set page_title = "Watch · " ~ course.title ~ " | HN Fathima" %}
+    {% set page_description = "Private course player for " ~ course.title ~ ". Access your purchased lessons from HN Fathima." %}
+    {% set page_robots = "noindex, nofollow" %}
+    {% set page_canonical = url_for('watch_course', course_id=course.id, _external=True) %}
+    {% include 'includes/seo.html' %}
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     {% include 'includes/ga4.html' %}
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <div class="container">
-        <nav class="shop-nav">
+        <nav class="shop-nav" aria-label="Course player navigation">
             <a href="{{ url_for('index') }}">← Home</a>
             <a href="{{ url_for('shop') }}">Courses</a>
             <a href="{{ url_for('course_detail', course_id=course.id) }}">{{ course.title }}</a>
         </nav>
 
-        <h1 class="shop-title">{{ course.title }}</h1>
-        <p class="shop-intro">Your purchased lessons</p>
+        <main id="main-content">
+            <h1 class="shop-title">{{ course.title }}</h1>
+            <p class="shop-intro">Your purchased lessons</p>
 
-        <div class="lesson-players">
-            {% for section in sections %}
-                <h2 class="course-section-heading">{{ section.name }}</h2>
+            <div class="lesson-players">
+                {% for section in sections %}
+                    <h2 class="course-section-heading">{{ section.name }}</h2>
 
-                {% for lesson in section.lessons %}
-                <section class="lesson-player-block">
-                    <h3 class="lesson-title-heading">{{ lesson.title }}</h3>
-                    <div class="bunny-embed">
-                        <iframe
-                            src="{{ lesson.embed_url }}?autoplay=false&preload=true"
-                            loading="lazy"
-                            allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen;"
-                            allowfullscreen
-                            title="{{ lesson.title }}"
-                        ></iframe>
-                    </div>
-                </section>
+                    {% for lesson in section.lessons %}
+                    <section class="lesson-player-block">
+                        <h3 class="lesson-title-heading">{{ lesson.title }}</h3>
+                        <div class="bunny-embed">
+                            <iframe
+                                src="{{ lesson.embed_url }}?autoplay=false&preload=true"
+                                loading="lazy"
+                                allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen;"
+                                allowfullscreen
+                                title="Video lesson: {{ lesson.title }}"
+                            ></iframe>
+                        </div>
+                    </section>
+                    {% endfor %}
+
+                    {% if section.resources %}
+                    <section class="course-downloads">
+                        <h3 class="downloads-heading">Downloads</h3>
+                        <ul class="download-list">
+                            {% for resource in section.resources %}
+                            <li>
+                                <a
+                                    class="download-link"
+                                    href="{{ url_for('static', filename=resource.file) }}"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >{{ resource.title }}</a>
+                                <span class="download-meta">PDF</span>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </section>
+                    {% endif %}
                 {% endfor %}
-
-                {% if section.resources %}
-                <section class="course-downloads">
-                    <h3 class="downloads-heading">Downloads</h3>
-                    <ul class="download-list">
-                        {% for resource in section.resources %}
-                        <li>
-                            <a
-                                class="download-link"
-                                href="{{ url_for('static', filename=resource.file) }}"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >{{ resource.title }}</a>
-                            <span class="download-meta">PDF</span>
-                        </li>
-                        {% endfor %}
-                    </ul>
-                </section>
-                {% endif %}
-            {% endfor %}
-        </div>
+            </div>
+        </main>
     </div>
 </body>
 </html>

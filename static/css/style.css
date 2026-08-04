@@ -9,6 +9,21 @@ body {
     background-color: white;
     min-height: 100vh;
 }
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 10000;
+    padding: 0.75rem 1.25rem;
+    background: #111;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+}
+.skip-link:focus {
+    left: 1rem;
+    top: 1rem;
+}
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -44,7 +59,7 @@ header {
 .header-text {
     font-size: 16px;
     color: black;
-    margin-right: 10px;
+    margin: 0 10px 0 0;
 }
 .header-media {
     display: flex;
@@ -443,6 +458,14 @@ h1 {
     margin: 48px 0 16px;
     padding-top: 20px;
     border-top: 1px solid #eaeaea;
+}
+.footer-seo-blurb {
+    max-width: 42rem;
+    margin: 1rem auto 0;
+    text-align: center;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: #555;
 }
 .social-links {
     display: flex;

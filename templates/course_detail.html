@@ -3,20 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ course.title }} | HN Fathima</title>
+    {% set page_title = course.title ~ " | HN Fathima" %}
+    {% set page_description = course.short_description or course.description or ("Online course by HN Fathima: " ~ course.title) %}
+    {% set page_keywords = course.title ~ ", weight loss course, nutrition course, HN Fathima, fat loss" %}
+    {% set page_canonical = url_for('course_detail', course_id=course.id, _external=True) %}
+    {% set page_og_type = "product" %}
+    {% set page_image = url_for('static', filename=course.thumbnail, _external=True) if course.thumbnail else url_for('static', filename='images/nutritionist_image.png', _external=True) %}
+    {% include 'includes/seo.html' %}
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     {% include 'includes/ga4.html' %}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": {{ course.title | tojson }},
+      "description": {{ (course.description or course.short_description or course.title) | tojson }},
+      "provider": {
+        "@type": "Person",
+        "name": "HN Fathima",
+        "url": {{ url_for('index', _external=True) | tojson }}
+      },
+      "url": {{ url_for('course_detail', course_id=course.id, _external=True) | tojson }},
+      "offers": {
+        "@type": "Offer",
+        "price": {{ '%.2f'|format(course.price_cents / 100) | tojson }},
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": {{ url_for('course_detail', course_id=course.id, _external=True) | tojson }}
+      }
+    }
+    </script>
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <div class="container">
-        <nav class="shop-nav">
+        <nav class="shop-nav" aria-label="Course navigation">
             <a href="{{ url_for('index') }}">← Home</a>
             <a href="{{ url_for('shop') }}">Courses</a>
         </nav>
 
         {% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}
-                <div class="flash-messages">
+                <div class="flash-messages" role="status" aria-live="polite">
                     {% for category, message in messages %}
                         <p class="flash flash-{{ category }}">{{ message }}</p>
                     {% endfor %}
@@ -24,63 +52,65 @@
             {% endif %}
         {% endwith %}
 
-        <section class="course-hero">
-            {% if course.thumbnail %}
-                <img
-                    src="{{ url_for('static', filename=course.thumbnail) }}"
-                    alt="{{ course.title }}"
-                    class="course-hero-thumb"
-                >
-            {% endif %}
-            <h1>{{ course.title }}</h1>
-            {% if course.eyebrow %}
-            <p class="course-detail-eyebrow">{{ course.eyebrow }}</p>
-            {% endif %}
-            <p class="subtitle">{{ course.description }}</p>
-            <p class="course-price-large">${{ '%.2f'|format(course.price_cents / 100) }} USD</p>
-            {% if course.discount_code and not owned %}
-            <p class="course-promo-note">
-                Save {{ course.discount_percent }}%: enter code
-                <strong>{{ course.discount_code }}</strong> on the Stripe checkout page.
-            </p>
-            {% endif %}
+        <main id="main-content">
+            <section class="course-hero" aria-labelledby="course-title">
+                {% if course.thumbnail %}
+                    <img
+                        src="{{ url_for('static', filename=course.thumbnail) }}"
+                        alt="{{ course.title }} course thumbnail"
+                        class="course-hero-thumb"
+                    >
+                {% endif %}
+                <h1 id="course-title">{{ course.title }}</h1>
+                {% if course.eyebrow %}
+                <p class="course-detail-eyebrow">{{ course.eyebrow }}</p>
+                {% endif %}
+                <p class="subtitle">{{ course.description }}</p>
+                <p class="course-price-large">${{ '%.2f'|format(course.price_cents / 100) }} USD</p>
+                {% if course.discount_code and not owned %}
+                <p class="course-promo-note">
+                    Save {{ course.discount_percent }}%: enter code
+                    <strong>{{ course.discount_code }}</strong> on the Stripe checkout page.
+                </p>
+                {% endif %}
 
-            {% if owned %}
-                <a class="cta-button" href="{{ url_for('watch_course', course_id=course.id) }}">
-                    Continue watching
-                </a>
-            {% else %}
-                <form method="post" action="{{ url_for('create_checkout', course_id=course.id) }}">
-                    <button type="submit" class="cta-button shop-buy-button">
-                        Buy direct — one-click checkout (${{ '%.2f'|format(course.price_cents / 100) }})
-                    </button>
-                </form>
-                <p class="lock-in-text">Secure checkout with Stripe. Access unlocks immediately after payment.</p>
-            {% endif %}
-        </section>
+                {% if owned %}
+                    <a class="cta-button" href="{{ url_for('watch_course', course_id=course.id) }}">
+                        Continue watching
+                    </a>
+                {% else %}
+                    <form method="post" action="{{ url_for('create_checkout', course_id=course.id) }}">
+                        <button type="submit" class="cta-button shop-buy-button">
+                            Buy direct — one-click checkout (${{ '%.2f'|format(course.price_cents / 100) }})
+                        </button>
+                    </form>
+                    <p class="lock-in-text">Secure checkout with Stripe. Access unlocks immediately after payment.</p>
+                {% endif %}
+            </section>
 
-        <section class="course-curriculum">
-            <h2>What's included</h2>
-            <ol class="lesson-list">
-                {% for lesson in course.lessons %}
-                    <li>
-                        <span class="lesson-title">{{ lesson.title }}</span>
-                        <span class="lesson-duration">{{ lesson.duration }}</span>
-                    </li>
-                {% endfor %}
-            </ol>
-            {% if course.resources %}
-            <h3 class="curriculum-downloads-heading">Recipe &amp; grocery downloads</h3>
-            <ul class="lesson-list download-preview-list">
-                {% for resource in course.resources %}
-                    <li>
-                        <span class="lesson-title">{{ resource.title }}</span>
-                        <span class="lesson-duration">PDF</span>
-                    </li>
-                {% endfor %}
-            </ul>
-            {% endif %}
-        </section>
+            <section class="course-curriculum" aria-labelledby="curriculum-heading">
+                <h2 id="curriculum-heading">What's included</h2>
+                <ol class="lesson-list">
+                    {% for lesson in course.lessons %}
+                        <li>
+                            <span class="lesson-title">{{ lesson.title }}</span>
+                            <span class="lesson-duration">{{ lesson.duration }}</span>
+                        </li>
+                    {% endfor %}
+                </ol>
+                {% if course.resources %}
+                <h3 class="curriculum-downloads-heading">Recipe &amp; grocery downloads</h3>
+                <ul class="lesson-list download-preview-list">
+                    {% for resource in course.resources %}
+                        <li>
+                            <span class="lesson-title">{{ resource.title }}</span>
+                            <span class="lesson-duration">PDF</span>
+                        </li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </section>
+        </main>
     </div>
 </body>
 </html>

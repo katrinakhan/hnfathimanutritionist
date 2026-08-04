@@ -3,33 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Purchase complete | HN Fathima</title>
+    {% set page_title = "Purchase complete | HN Fathima" %}
+    {% set page_description = "Payment received. Your HN Fathima course lessons are ready to watch." %}
+    {% set page_robots = "noindex, nofollow" %}
+    {% include 'includes/seo.html' %}
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     {% include 'includes/ga4.html' %}
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <div class="container">
-        <nav class="shop-nav">
+        <nav class="shop-nav" aria-label="Checkout navigation">
             <a href="{{ url_for('index') }}">← Home</a>
             <a href="{{ url_for('shop') }}">Courses</a>
         </nav>
 
-        <section class="course-hero">
-            <h1>You're in!</h1>
-            <p class="subtitle">
-                Payment received for <strong>{{ course.title }}</strong>.
-                Your lessons are ready to watch.
-            </p>
-            <a
-                class="cta-button"
-                href="{{ url_for('watch_course', course_id=course.id, access=access_token) }}"
-            >
-                Start watching
-            </a>
-            <p class="lock-in-text">
-                Bookmark this page or the course player link so you can return later on this device/browser.
-            </p>
-        </section>
+        <main id="main-content">
+            <section class="course-hero" aria-labelledby="success-heading">
+                <h1 id="success-heading">You're in!</h1>
+                <p class="subtitle">
+                    Payment received for <strong>{{ course.title }}</strong>.
+                    Your lessons are ready to watch.
+                </p>
+                <a
+                    class="cta-button"
+                    href="{{ url_for('watch_course', course_id=course.id, access=access_token) }}"
+                >
+                    Start watching
+                </a>
+                <p class="lock-in-text">
+                    Bookmark this page or the course player link so you can return later on this device/browser.
+                </p>
+            </section>
+        </main>
     </div>
 </body>
 </html>
