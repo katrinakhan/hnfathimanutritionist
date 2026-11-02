@@ -305,6 +305,16 @@
 
                 <p class="lock-in-text">Lock-in access at the discounted price before it goes up</p>
             </section>
+
+            <section class="guides-teaser" aria-labelledby="guides-heading">
+                <h2 id="guides-heading">Guides</h2>
+                <ul>
+                    <li><a href="{{ url_for('guide_detail', slug='what-to-eat-for-fat-loss') }}">What should I eat to lose fat?</a></li>
+                    <li><a href="{{ url_for('guide_detail', slug='course-vs-a-diet') }}">How is this course different from a diet?</a></li>
+                    <li><a href="{{ url_for('guide_detail', slug='can-exercise-alone-lose-weight') }}">Can I lose weight with exercise alone?</a></li>
+                </ul>
+                <p><a href="{{ url_for('guides') }}">See all guides</a></p>
+            </section>
         </main>
 
         <footer class="site-footer" role="contentinfo">

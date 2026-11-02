@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% set page_title = "Fat Loss Guides | HN Fathima" %}
+    {% set page_description = "Plain answers on what to eat for fat loss, how a course differs from a diet, and whether exercise alone is enough. From certified nutritionist HN Fathima." %}
+    {% set page_canonical = url_for('guides', _external=True) %}
+    {% include 'includes/seo.html' %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    {% include 'includes/ga4.html' %}
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <div class="container">
+        <nav class="shop-nav" aria-label="Site">
+            <a href="{{ url_for('index') }}">← Home</a>
+            <a href="{{ url_for('shop') }}">Courses</a>
+            <a href="{{ url_for('guides') }}" aria-current="page">Guides</a>
+        </nav>
+        <main id="main-content">
+            <h1 class="shop-title">Guides</h1>
+            <p class="shop-intro">Short answers to the questions people ask before they start.</p>
+            <section class="guide-list" aria-label="Articles">
+                {% for article in articles %}
+                <article class="guide-card">
+                    <h2><a href="{{ url_for('guide_detail', slug=article.slug) }}">{{ article.title }}</a></h2>
+                    <p>{{ article.description }}</p>
+                    <a class="guide-read" href="{{ url_for('guide_detail', slug=article.slug) }}">Read the guide</a>
+                </article>
+                {% endfor %}
+            </section>
+        </main>
+    </div>
+</body>
+</html>

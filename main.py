@@ -18,6 +18,7 @@ from flask import (
 )
 from itsdangerous import BadSignature, SignatureExpired, URLSafeTimedSerializer
 
+from articles import all_articles, get_article
 from courses import all_courses, get_course
 
 load_dotenv()
@@ -148,7 +149,11 @@ def robots_txt():
 @app.route("/sitemap.xml")
 def sitemap_xml():
     base = public_base_url()
-    paths = ["/", "/shop"] + [f"/shop/{course['id']}" for course in all_courses()]
+    paths = (
+        ["/", "/shop", "/guides"]
+        + [f"/shop/{course['id']}" for course in all_courses()]
+        + [f"/guides/{article['slug']}" for article in all_articles()]
+    )
     urls = "\n".join(f"  <url><loc>{base}{path}</loc></url>" for path in paths)
     xml = (
         '<?xml version="1.0" encoding="UTF-8"?>\n'
@@ -157,6 +162,20 @@ def sitemap_xml():
         "</urlset>\n"
     )
     return Response(xml, mimetype="application/xml")
+
+
+@app.route("/guides")
+def guides():
+    return render_template("guides.html", articles=all_articles())
+
+
+@app.route("/guides/<slug>")
+def guide_detail(slug):
+    article = get_article(slug)
+    if not article:
+        abort(404)
+    course = get_course(article["course_id"]) if article.get("course_id") else None
+    return render_template("guide.html", article=article, course=course)
 
 
 @app.route("/shop")

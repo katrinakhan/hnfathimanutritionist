@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% set page_title = article.title ~ " | HN Fathima" %}
+    {% set page_description = article.description %}
+    {% set page_canonical = url_for('guide_detail', slug=article.slug, _external=True) %}
+    {% set page_og_type = "article" %}
+    {% include 'includes/seo.html' %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    {% include 'includes/ga4.html' %}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": {{ article.title | tojson }},
+      "description": {{ article.description | tojson }},
+      "author": {"@type": "Person", "name": "HN Fathima"},
+      "mainEntityOfPage": {{ page_canonical | tojson }}
+    }
+    </script>
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <div class="container">
+        <nav class="shop-nav" aria-label="Site">
+            <a href="{{ url_for('index') }}">← Home</a>
+            <a href="{{ url_for('guides') }}">Guides</a>
+            <a href="{{ url_for('shop') }}">Courses</a>
+        </nav>
+        <main id="main-content" class="guide-article">
+            <h1>{{ article.title }}</h1>
+            {% for section in article.sections %}
+            <h2>{{ section.heading }}</h2>
+            {% for paragraph in section.paragraphs %}
+            <p>{{ paragraph }}</p>
+            {% endfor %}
+            {% endfor %}
+            {% if course %}
+            <p class="guide-next">
+                <a class="cta-button" href="{{ url_for('course_detail', course_id=course.id) }}">See {{ course.title }}</a>
+            </p>
+            {% endif %}
+        </main>
+    </div>
+</body>
+</html>
