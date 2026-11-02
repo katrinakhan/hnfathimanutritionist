@@ -574,19 +574,22 @@ h1 {
 .guides-teaser > p {
     text-align: center;
 }
-.guides-teaser ul {
-    columns: 2;
-    column-gap: 48px;
+.guides-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 160px;
+    align-items: start;
+}
+.guides-columns ul {
     margin: 0;
     padding-left: 1.2rem;
 }
-.guides-teaser li {
-    break-inside: avoid;
+.guides-columns li {
     margin: 0 0 10px;
 }
 @media (max-width: 700px) {
-    .guides-teaser ul {
-        column-gap: 20px;
+    .guides-columns {
+        column-gap: 24px;
         font-size: 15px;
     }
 }
