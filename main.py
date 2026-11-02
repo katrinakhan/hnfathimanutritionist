@@ -7,6 +7,7 @@ import stripe
 from dotenv import load_dotenv
 from flask import (
     Flask,
+    Response,
     abort,
     flash,
     redirect,
@@ -128,6 +129,34 @@ def ensure_course_promo(course: dict) -> None:
 @app.route("/")
 def index():
     return render_template("index.html", courses=all_courses())
+
+
+@app.route("/robots.txt")
+def robots_txt():
+    base = public_base_url()
+    body = (
+        "User-agent: *\n"
+        "Allow: /\n"
+        "Disallow: /preview\n"
+        "Disallow: /my-courses\n"
+        "Disallow: /shop/success\n"
+        f"Sitemap: {base}/sitemap.xml\n"
+    )
+    return Response(body, mimetype="text/plain")
+
+
+@app.route("/sitemap.xml")
+def sitemap_xml():
+    base = public_base_url()
+    paths = ["/", "/shop"] + [f"/shop/{course['id']}" for course in all_courses()]
+    urls = "\n".join(f"  <url><loc>{base}{path}</loc></url>" for path in paths)
+    xml = (
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+        f"{urls}\n"
+        "</urlset>\n"
+    )
+    return Response(xml, mimetype="application/xml")
 
 
 @app.route("/shop")
