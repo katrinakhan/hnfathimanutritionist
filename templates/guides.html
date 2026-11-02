@@ -24,6 +24,7 @@
             <section class="guide-list" aria-label="Articles">
                 {% for article in articles %}
                 <article class="guide-card">
+                    {% if article.label %}<p class="guide-label">{{ article.label }}</p>{% endif %}
                     <h2><a href="{{ url_for('guide_detail', slug=article.slug) }}">{{ article.title }}</a></h2>
                     <p>{{ article.description }}</p>
                     <a class="guide-read" href="{{ url_for('guide_detail', slug=article.slug) }}">Read the guide</a>

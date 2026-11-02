@@ -129,7 +129,7 @@ def ensure_course_promo(course: dict) -> None:
 
 @app.route("/")
 def index():
-    return render_template("index.html", courses=all_courses())
+    return render_template("index.html", courses=all_courses(), articles=all_articles())
 
 
 @app.route("/robots.txt")

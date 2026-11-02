@@ -41,6 +41,10 @@
             <p class="guide-next">
                 <a class="cta-button" href="{{ url_for('course_detail', course_id=course.id) }}">See {{ course.title }}</a>
             </p>
+            {% elif article.link_url %}
+            <p class="guide-next">
+                <a class="cta-button" href="{{ article.link_url }}" target="_blank" rel="noopener noreferrer">{{ article.link_label }}</a>
+            </p>
             {% endif %}
         </main>
     </div>

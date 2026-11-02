@@ -526,6 +526,14 @@ h1 {
     background: #f8f6f3;
     border-radius: 12px;
 }
+.guide-label {
+    margin: 0 0 6px;
+    color: #E53935;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
 .guide-card h2 {
     margin: 0 0 8px;
     font-size: 1.35rem;
