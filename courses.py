@@ -599,17 +599,18 @@ COURSES = {
         "discount_percent": 35,
         "discount_code": "GUT35",
         "short_description": (
-            "A simple 3-day video challenge to support gut health — "
-            "watch one lesson each day and take action."
+            "Three short videos: an elimination day, fermented foods and "
+            "hydration, then gut health and mindfulness."
         ),
         "description": (
-            "Join this short challenge with three focused video lessons. "
-            "Complete Day 1, Day 2, and Day 3 at your own pace — lifetime "
+            "A three-day gut health sequence you can watch at your own pace. "
+            "Day 1 is the elimination diet, Day 2 is fermented foods and "
+            "hydration, and Day 3 is gut health and mindfulness. Lifetime "
             "access after purchase."
         ),
         "lessons": [
             {
-                "title": "Day 1 — Gut Health Challenge",
+                "title": "Day 1 — The Elimination Diet",
                 "duration": "19:28",
                 "embed_url": (
                     "https://player.mediadelivery.net/embed/705527/"
@@ -617,7 +618,7 @@ COURSES = {
                 ),
             },
             {
-                "title": "Day 2 — Gut Health Challenge",
+                "title": "Day 2 — Fermented Foods and Hydration",
                 "duration": "13:59",
                 "embed_url": (
                     "https://player.mediadelivery.net/embed/705527/"
@@ -625,7 +626,7 @@ COURSES = {
                 ),
             },
             {
-                "title": "Day 3 — Gut Health Challenge",
+                "title": "Day 3 — Gut Health and Mindfulness",
                 "duration": "08:58",
                 "embed_url": (
                     "https://player.mediadelivery.net/embed/705527/"

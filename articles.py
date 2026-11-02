@@ -96,16 +96,22 @@ ARTICLES = [
         "course_id": "3-day-gut-health",
         "sections": [
             {
-                "heading": "One lesson a day, for three days",
+                "heading": "Day 1: The elimination diet",
                 "paragraphs": [
-                    "The 3-Day Gut Health Challenge is not a long course. It is three videos. Day 1 is about 19 minutes, Day 2 is about 14 minutes, and Day 3 is about 9 minutes. You watch one, do what it asks, and come back the next day.",
-                    "You buy it once on this website and keep lifetime access. There is no subscription. The code GUT35 takes 35 percent off at checkout.",
+                    "Day 1 is about 19 minutes. You take out the foods that commonly irritate the gut, so you can notice what feels better when they are gone. It is one day of simplifying, not a new diet you have to live on.",
                 ],
             },
             {
-                "heading": "Who it is for",
+                "heading": "Day 2: Fermented foods and hydration",
                 "paragraphs": [
-                    "Use it if bloating, heavy meals, or a messy routine is what you want to look at first. It is a short start. If you want recipes, grocery lists, sleep, stress, and the full fat-loss plan, The Easiest Way to Lose Weight is the longer course.",
+                    "Day 2 is about 14 minutes. You add fermented foods and you pay attention to how much you drink. The aim is to feed the gut and keep fluids steady after the foods you removed on day 1.",
+                ],
+            },
+            {
+                "heading": "Day 3: Gut health and mindfulness",
+                "paragraphs": [
+                    "Day 3 is about 9 minutes. You look at how you eat, not only what you eat. Rushing, stress, and not paying attention to a meal change how the gut feels. This lesson ties the three days together.",
+                    "You buy the three videos once and keep them. The code GUT35 takes 35 percent off at checkout. If you want recipes and the full fat-loss plan after that, The Easiest Way to Lose Weight is the longer course.",
                 ],
             },
         ],
@@ -130,7 +136,7 @@ ARTICLES = [
             {
                 "heading": "A three-day start",
                 "paragraphs": [
-                    "HN Fathima's challenge is built for that start: one focused lesson each day, then you keep the videos. It does not replace medical care. It is a practical three-day sequence you can finish.",
+                    "Day 1 is the elimination diet, Day 2 is fermented foods and hydration, and Day 3 is gut health and mindfulness. You keep the videos after you buy them. It does not replace medical care.",
                     "When the three days are done, the weight-loss course is there if you want meals and habits for the months after.",
                 ],
             },
