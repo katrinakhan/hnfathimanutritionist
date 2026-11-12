@@ -48,7 +48,9 @@
                             <h2>{{ course.title }}</h2>
                             <p>{{ course.short_description }}</p>
                             <p class="course-meta">{{ course.lessons|length }} lessons</p>
-                            {% if course.discount_code %}
+                            {% if course.discount_code and course.discount_amount_cents %}
+                            <p class="course-meta">Enter code <strong>{{ course.discount_code }}</strong> and pay ${{ '%.2f'|format((course.price_cents - course.discount_amount_cents) / 100) }}</p>
+                            {% elif course.discount_code and course.discount_percent %}
                             <p class="course-meta">Code <strong>{{ course.discount_code }}</strong> = {{ course.discount_percent }}% off</p>
                             {% endif %}
                         </div>

@@ -208,7 +208,12 @@
                             <h3>{{ course.title }}</h3>
                             <p>{{ course.short_description }}</p>
                             <span class="course-feature-price">${{ '%.2f'|format(course.price_cents / 100) }}</span>
-                            {% if course.discount_code %}
+                            {% if course.discount_code and course.discount_amount_cents %}
+                            <p class="course-feature-promo">
+                                Enter code <strong>{{ course.discount_code }}</strong> at checkout and pay
+                                <strong>${{ '%.2f'|format((course.price_cents - course.discount_amount_cents) / 100) }}</strong>
+                            </p>
+                            {% elif course.discount_code and course.discount_percent %}
                             <p class="course-feature-promo">
                                 Use code <strong>{{ course.discount_code }}</strong> for {{ course.discount_percent }}% off at checkout
                             </p>

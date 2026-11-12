@@ -596,8 +596,8 @@ COURSES = {
         "price_cents": 900,  # $9.00 USD
         "currency": "usd",
         "thumbnail": "images/gut-health-course.jpg",
-        "discount_percent": 35,
-        "discount_code": "GUT35",
+        "discount_amount_cents": 300,  # code GUT30 charges $6.00
+        "discount_code": "GUT30",
         "short_description": (
             "Three short videos: an elimination day, fermented foods and "
             "hydration, then gut health and mindfulness."

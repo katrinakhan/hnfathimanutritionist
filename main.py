@@ -102,20 +102,33 @@ def ensure_course_promo(course: dict) -> None:
     """Create Stripe coupon + promotion code for a course if configured."""
     code = course.get("discount_code")
     percent = course.get("discount_percent")
-    if not code or not percent or not stripe.api_key:
+    amount_off = course.get("discount_amount_cents")
+    if not code or not stripe.api_key or not (percent or amount_off):
         return
 
-    coupon_id = f"coupon_{course['id']}_{percent}off".replace("-", "_")[:40]
+    if amount_off:
+        coupon_id = f"coupon_{course['id']}_{amount_off}off".replace("-", "_")[:40]
+        coupon_args = {
+            "id": coupon_id,
+            "amount_off": int(amount_off),
+            "currency": course.get("currency") or "usd",
+            "duration": "once",
+            "name": f"${amount_off / 100:.0f} off {course['title']}"[:40],
+            "metadata": {"course_id": course["id"]},
+        }
+    else:
+        coupon_id = f"coupon_{course['id']}_{percent}off".replace("-", "_")[:40]
+        coupon_args = {
+            "id": coupon_id,
+            "percent_off": percent,
+            "duration": "once",
+            "name": f"{percent}% off {course['title']}"[:40],
+            "metadata": {"course_id": course["id"]},
+        }
     try:
         stripe.Coupon.retrieve(coupon_id)
     except stripe.InvalidRequestError:
-        stripe.Coupon.create(
-            id=coupon_id,
-            percent_off=percent,
-            duration="once",
-            name=f"{percent}% off {course['title']}"[:40],
-            metadata={"course_id": course["id"]},
-        )
+        stripe.Coupon.create(**coupon_args)
 
     existing = stripe.PromotionCode.list(code=code, limit=1)
     if not existing.data:

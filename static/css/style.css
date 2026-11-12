@@ -947,6 +947,10 @@ h1 {
     color: #e65100;
     font-size: 15px;
 }
+.course-promo-note .pay-price {
+    font-size: 1.4rem;
+    color: #E53935;
+}
 .course-feature-eyebrow {
     margin: 0 0 8px;
     color: #ff8a80;

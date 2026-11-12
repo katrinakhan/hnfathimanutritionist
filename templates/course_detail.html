@@ -67,7 +67,13 @@
                 {% endif %}
                 <p class="subtitle">{{ course.description }}</p>
                 <p class="course-price-large">${{ '%.2f'|format(course.price_cents / 100) }} USD</p>
-                {% if course.discount_code and not owned %}
+                {% if course.discount_code and course.discount_amount_cents and not owned %}
+                <p class="course-promo-note">
+                    This price is ${{ '%.2f'|format(course.price_cents / 100) }}.
+                    Enter code <strong>{{ course.discount_code }}</strong> at checkout
+                    and you pay <strong class="pay-price">${{ '%.2f'|format((course.price_cents - course.discount_amount_cents) / 100) }}</strong>.
+                </p>
+                {% elif course.discount_code and course.discount_percent and not owned %}
                 <p class="course-promo-note">
                     Save {{ course.discount_percent }}%: enter code
                     <strong>{{ course.discount_code }}</strong> on the Stripe checkout page.
@@ -81,7 +87,11 @@
                 {% else %}
                     <form method="post" action="{{ url_for('create_checkout', course_id=course.id) }}">
                         <button type="submit" class="cta-button shop-buy-button">
+                            {% if course.discount_code and course.discount_amount_cents %}
+                            Buy direct — pay ${{ '%.2f'|format((course.price_cents - course.discount_amount_cents) / 100) }} with code {{ course.discount_code }}
+                            {% else %}
                             Buy direct — one-click checkout (${{ '%.2f'|format(course.price_cents / 100) }})
+                            {% endif %}
                         </button>
                     </form>
                     <p class="lock-in-text">Secure checkout with Stripe. Access unlocks immediately after payment.</p>
