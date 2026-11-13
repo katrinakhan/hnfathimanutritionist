@@ -96,6 +96,20 @@ def _as_dict(obj) -> dict:
     return {}
 
 
+def _checkout_session_for_reference(reference: str):
+    """Accept a Checkout Session id (cs_) or the Payment ID shown in Stripe (pi_)."""
+    if reference.startswith("pi_"):
+        found = stripe.checkout.Session.list(payment_intent=reference, limit=1)
+        sessions = _as_dict(found).get("data") or []
+        if not sessions or not isinstance(sessions[0], dict):
+            return None
+        session_id = sessions[0].get("id")
+        if not session_id:
+            return None
+        return stripe.checkout.Session.retrieve(session_id)
+    return stripe.checkout.Session.retrieve(reference)
+
+
 def _session_course_id(checkout_session) -> str | None:
     data = _as_dict(checkout_session)
     metadata = data.get("metadata") or {}
@@ -282,7 +296,10 @@ def checkout_success():
         return redirect(url_for("shop"))
 
     try:
-        checkout_session = stripe.checkout.Session.retrieve(session_id)
+        checkout_session = _checkout_session_for_reference(session_id)
+        if checkout_session is None:
+            flash("Payment is not complete yet. If you were charged, contact support.", "error")
+            return redirect(url_for("shop"))
         session_data = _as_dict(checkout_session)
         payment_status = session_data.get("payment_status")
         status = session_data.get("status")
