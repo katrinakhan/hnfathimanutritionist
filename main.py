@@ -101,13 +101,35 @@ def _checkout_session_for_reference(reference: str):
     if reference.startswith("pi_"):
         found = stripe.checkout.Session.list(payment_intent=reference, limit=1)
         sessions = _as_dict(found).get("data") or []
-        if not sessions or not isinstance(sessions[0], dict):
+        if not sessions:
             return None
-        session_id = sessions[0].get("id")
+        session_id = _as_dict(sessions[0]).get("id")
         if not session_id:
             return None
         return stripe.checkout.Session.retrieve(session_id)
     return stripe.checkout.Session.retrieve(reference)
+
+
+def _payment_is_complete(session_data: dict) -> bool:
+    # Checkout redirects here only after the customer finishes paying.
+    # An authorised card can be "complete" before the status reads "paid".
+    return session_data.get("status") == "complete" or session_data.get("payment_status") in (
+        "paid",
+        "no_payment_required",
+    )
+
+
+def _course_for_paid_intent(reference: str):
+    """Match a succeeded Payment ID to a course when the checkout session is missing."""
+    intent = _as_dict(stripe.PaymentIntent.retrieve(reference))
+    if intent.get("status") not in ("succeeded", "requires_capture", "processing"):
+        return None
+    amount = intent.get("amount_received") or intent.get("amount")
+    currency = (intent.get("currency") or "usd").lower()
+    for course in all_courses():
+        if course["price_cents"] == amount and course.get("currency", "usd") == currency:
+            return course
+    return None
 
 
 def _session_course_id(checkout_session) -> str | None:
@@ -297,29 +319,19 @@ def checkout_success():
 
     try:
         checkout_session = _checkout_session_for_reference(session_id)
-        if checkout_session is None:
-            flash("Payment is not complete yet. If you were charged, contact support.", "error")
-            return redirect(url_for("shop"))
         session_data = _as_dict(checkout_session)
-        payment_status = session_data.get("payment_status")
-        status = session_data.get("status")
-
-        # Card payments usually become "paid"; accept completed sessions too.
-        paid = payment_status == "paid" or (
-            status == "complete" and payment_status in ("paid", "no_payment_required")
-        )
-        if not paid:
+        course = None
+        if checkout_session is not None and _payment_is_complete(session_data):
+            course_id = _session_course_id(checkout_session)
+            course = get_course(course_id) if course_id else None
+        if course is None and session_id.startswith("pi_"):
+            course = _course_for_paid_intent(session_id)
+        if course is None:
             flash("Payment is not complete yet. If you were charged, contact support.", "error")
             return redirect(url_for("shop"))
 
-        course_id = _session_course_id(checkout_session)
-        course = get_course(course_id) if course_id else None
-        if not course:
-            flash("Payment succeeded, but the course could not be found.", "error")
-            return redirect(url_for("shop"))
-
-        grant_course_access(course_id)
-        access_token = make_access_token(course_id)
+        grant_course_access(course["id"])
+        access_token = make_access_token(course["id"])
         return render_template(
             "checkout_success.html",
             course=course,
