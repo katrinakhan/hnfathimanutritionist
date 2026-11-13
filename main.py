@@ -82,16 +82,27 @@ def public_base_url() -> str:
     return request.url_root.rstrip("/")
 
 
+def _as_dict(obj) -> dict:
+    """Stripe's current library is not a dict and has no .get()."""
+    if obj is None:
+        return {}
+    if isinstance(obj, dict):
+        return obj
+    to_dict = getattr(obj, "to_dict", None)
+    if callable(to_dict):
+        data = to_dict()
+        if isinstance(data, dict):
+            return data
+    return {}
+
+
 def _session_course_id(checkout_session) -> str | None:
-    metadata = checkout_session.get("metadata") or {}
-    if hasattr(metadata, "to_dict"):
-        metadata = metadata.to_dict()
-    course_id = None
-    if isinstance(metadata, dict):
-        course_id = metadata.get("course_id")
-    if not course_id:
-        course_id = checkout_session.get("client_reference_id")
-    return course_id
+    data = _as_dict(checkout_session)
+    metadata = data.get("metadata") or {}
+    if not isinstance(metadata, dict):
+        metadata = _as_dict(metadata)
+    course_id = metadata.get("course_id") or data.get("client_reference_id")
+    return course_id or None
 
 
 def _stripe_error_message(exc: Exception) -> str:
@@ -272,8 +283,9 @@ def checkout_success():
 
     try:
         checkout_session = stripe.checkout.Session.retrieve(session_id)
-        payment_status = checkout_session.get("payment_status")
-        status = checkout_session.get("status")
+        session_data = _as_dict(checkout_session)
+        payment_status = session_data.get("payment_status")
+        status = session_data.get("status")
 
         # Card payments usually become "paid"; accept completed sessions too.
         paid = payment_status == "paid" or (
