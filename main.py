@@ -317,8 +317,15 @@ def checkout_success():
         flash("Missing payment confirmation.", "error")
         return redirect(url_for("shop"))
 
+    checkout_session = None
+    lookup_error = ""
     try:
         checkout_session = _checkout_session_for_reference(session_id)
+    except Exception as exc:
+        lookup_error = _stripe_error_message(exc)
+        app.logger.error("checkout session lookup failed:\n%s", traceback.format_exc())
+
+    try:
         session_data = _as_dict(checkout_session)
         course = None
         if checkout_session is not None and _payment_is_complete(session_data):
@@ -328,7 +335,10 @@ def checkout_success():
             course = _course_for_paid_intent(session_id)
         if course is None:
             flash("Payment is not complete yet. If you were charged, contact support.", "error")
-            return redirect(url_for("shop"))
+            response = redirect(url_for("shop"))
+            if lookup_error:
+                response.headers["X-Unlock-Error"] = lookup_error[:180]
+            return response
 
         grant_course_access(course["id"])
         access_token = make_access_token(course["id"])
@@ -337,14 +347,16 @@ def checkout_success():
             course=course,
             access_token=access_token,
         )
-    except Exception:
+    except Exception as exc:
         app.logger.error("checkout_success failed:\n%s", traceback.format_exc())
         flash(
             "Payment may have succeeded, but unlocking the course failed. "
             "Please contact support with your email/receipt.",
             "error",
         )
-        return redirect(url_for("shop"))
+        response = redirect(url_for("shop"))
+        response.headers["X-Unlock-Error"] = _stripe_error_message(exc)[:180]
+        return response
 
 
 @app.route("/preview")
