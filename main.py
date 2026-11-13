@@ -318,11 +318,9 @@ def checkout_success():
         return redirect(url_for("shop"))
 
     checkout_session = None
-    lookup_error = ""
     try:
         checkout_session = _checkout_session_for_reference(session_id)
-    except Exception as exc:
-        lookup_error = _stripe_error_message(exc)
+    except Exception:
         app.logger.error("checkout session lookup failed:\n%s", traceback.format_exc())
 
     try:
@@ -335,10 +333,7 @@ def checkout_success():
             course = _course_for_paid_intent(session_id)
         if course is None:
             flash("Payment is not complete yet. If you were charged, contact support.", "error")
-            response = redirect(url_for("shop"))
-            if lookup_error:
-                response.headers["X-Unlock-Error"] = lookup_error[:180]
-            return response
+            return redirect(url_for("shop"))
 
         grant_course_access(course["id"])
         access_token = make_access_token(course["id"])
@@ -354,9 +349,7 @@ def checkout_success():
             "Please contact support with your email/receipt.",
             "error",
         )
-        response = redirect(url_for("shop"))
-        response.headers["X-Unlock-Error"] = _stripe_error_message(exc)[:180]
-        return response
+        return redirect(url_for("shop"))
 
 
 @app.route("/preview")
