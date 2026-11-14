@@ -22,528 +22,528 @@ COURSES = {
                 "title": "1. Intro",
                 "duration": "Section 1",
                 "embed_url": (
-                    "https://player.mediadelivery.net/embed/706368/"
-                    "af2fb2e3-cd51-48cd-adbb-c9699bf685c4"
+                    "https://player.mediadelivery.net/embed/809340/"
+                    "59303ab2-edeb-4746-a855-0e202c46c0bd"
                 ),
             },
             {
                 "title": "2. Carbs",
                 "duration": "Section 1",
                 "embed_url": (
-                    "https://player.mediadelivery.net/embed/706368/"
-                    "fe8971e4-ee91-4451-b2e3-264595e791ec"
+                    "https://player.mediadelivery.net/embed/809340/"
+                    "de48dc38-47dc-4457-bb7b-8d50403b97db"
                 ),
             },
             {
                 "title": "3. Fiber",
                 "duration": "Section 1",
                 "embed_url": (
-                    "https://player.mediadelivery.net/embed/706368/"
-                    "e68bb146-7fce-4bb1-a282-72683297ee0e"
+                    "https://player.mediadelivery.net/embed/809340/"
+                    "31206d14-fcc6-4813-b621-e74ce6ca66b0"
                 ),
             },
             {
                 "title": "4. Protein",
                 "duration": "Section 1",
                 "embed_url": (
-                    "https://player.mediadelivery.net/embed/706368/"
-                    "29e1ce27-7ac4-41d8-8043-1d03dce8843c"
+                    "https://player.mediadelivery.net/embed/809340/"
+                    "2220d60f-ae58-46a8-b1ea-a453545e1092"
                 ),
             },
             {
                 "title": "5. Fats",
                 "duration": "Section 1",
                 "embed_url": (
-                    "https://player.mediadelivery.net/embed/706368/"
-                    "d1ae98ae-043f-4036-a809-5a97706b1be4"
+                    "https://player.mediadelivery.net/embed/809340/"
+                    "07127386-242c-4807-aff7-0f3aa6e89469"
                 ),
             },
             {
                 "title": "6. Vitamins & Minerals",
                 "duration": "Section 1",
                 "embed_url": (
-                    "https://player.mediadelivery.net/embed/706368/"
-                    "836a588d-5fc1-4f64-a54c-0edc7e5015dd"
+                    "https://player.mediadelivery.net/embed/809340/"
+                    "285df53f-87bf-4f0d-a5cd-b8008bd80478"
                 ),
             },
             {
                 "title": "7. Water",
                 "duration": "Section 1",
                 "embed_url": (
-                    "https://player.mediadelivery.net/embed/706368/"
-                    "05b8db06-e571-45f0-8278-06368b53bd9a"
+                    "https://player.mediadelivery.net/embed/809340/"
+                    "15b25a99-64c3-4ae5-ad2f-2b53ca8668ae"
                 ),
             },
             {
                 "title": "8. Summary",
                 "duration": "Section 1",
                 "embed_url": (
-                    "https://player.mediadelivery.net/embed/706368/"
-                    "153b6af0-c5f1-458b-9358-166d7c4f7d08"
+                    "https://player.mediadelivery.net/embed/809340/"
+                    "028ef039-cb56-4fe5-b3ab-24422d319737"
                 ),
             },
             {
                 "title": "9. Intro",
                 "duration": "Section 2",
                 "embed_url": (
-                    "https://player.mediadelivery.net/embed/706368/"
-                    "0d8c70ac-dca3-46aa-a196-2f2f79828632"
+                    "https://player.mediadelivery.net/embed/809340/"
+                    "ad176f40-1328-4472-af27-cf432313e2b3"
                 ),
             },
             {
                 "title": "10. Nutrition",
                 "duration": "Section 2",
                 "embed_url": (
-                    "https://player.mediadelivery.net/embed/706368/"
-                    "57a596fe-3567-4926-a796-717b72cf33ab"
+                    "https://player.mediadelivery.net/embed/809340/"
+                    "96ccab9a-de7a-471b-9736-626ea63dcfab"
                 ),
             },
             {
                 "title": "11. Exercise",
                 "duration": "Section 2",
                 "embed_url": (
-                    "https://player.mediadelivery.net/embed/706368/"
-                    "ce6fc7bb-0b34-47c2-ae14-c798b3a0e1cb"
+                    "https://player.mediadelivery.net/embed/809340/"
+                    "aac02b7c-9aa1-4c0b-87fd-4c0ede6efc39"
                 ),
             },
             {
                 "title": "12. Sleep",
                 "duration": "Section 2",
                 "embed_url": (
-                    "https://player.mediadelivery.net/embed/706368/"
-                    "47d3f651-31ad-4e37-8a99-6bb90f65cfdb"
+                    "https://player.mediadelivery.net/embed/809340/"
+                    "6797a5fb-f215-47b0-b843-78b6dfe75998"
                 ),
             },
             {
                 "title": "13. Stress Management",
                 "duration": "Section 2",
                 "embed_url": (
-                    "https://player.mediadelivery.net/embed/706368/"
-                    "c6d1e8a4-c4c5-4419-98b4-389dce26d4b5"
+                    "https://player.mediadelivery.net/embed/809340/"
+                    "2ffa471c-5a3b-4157-8471-7970ce4c84b8"
                 ),
             },
             {
                 "title": "14. Mindset",
                 "duration": "Section 2",
                 "embed_url": (
-                    "https://player.mediadelivery.net/embed/706368/"
-                    "8210e99c-03e1-4cce-bc7d-a2d386c3ed22"
+                    "https://player.mediadelivery.net/embed/809340/"
+                    "5b371d1f-4da5-4129-86e1-018dd5f086fa"
                 ),
             },
             {
                 "title": "15. Summary",
                 "duration": "Section 2",
                 "embed_url": (
-                    "https://player.mediadelivery.net/embed/706368/"
-                    "2ad9c38a-fe1e-4bc6-a455-4b965df69bff"
+                    "https://player.mediadelivery.net/embed/809340/"
+                    "ab990444-2aa6-446b-a1cc-6ed2e01b9ea7"
                 ),
             },
             {
                 "title": "16. Intro",
                 "duration": "Section 3",
                 "embed_url": (
-                    "https://player.mediadelivery.net/embed/706368/"
-                    "aa583398-7a43-4194-934e-72e2a3adbb80"
+                    "https://player.mediadelivery.net/embed/809340/"
+                    "e5731c98-abee-40b3-876a-78bdf2f43d67"
                 ),
             },
             {
                 "title": "17. Goal Setting",
                 "duration": "Section 3",
                 "embed_url": (
-                    "https://player.mediadelivery.net/embed/706368/"
-                    "27f0cc47-d0ca-4f66-9cb1-ee03165799a6"
+                    "https://player.mediadelivery.net/embed/809340/"
+                    "671ed959-bd6c-47a1-8385-c6ab4967cbf1"
                 ),
             },
             {
                 "title": "18. Habits",
                 "duration": "Section 3",
                 "embed_url": (
-                    "https://player.mediadelivery.net/embed/706368/"
-                    "b1af845b-77b4-4eb3-9b83-59912b2df21e"
+                    "https://player.mediadelivery.net/embed/809340/"
+                    "594d6dad-c47a-415f-82c1-3536feeff5d5"
                 ),
             },
             {
                 "title": "19. Environment & Self-Sabotage",
                 "duration": "Section 3",
                 "embed_url": (
-                    "https://player.mediadelivery.net/embed/706368/"
-                    "2e6cdc36-a992-470c-90fa-08a0c736a919"
+                    "https://player.mediadelivery.net/embed/809340/"
+                    "f0470d29-b848-4697-a82d-9b39128b8507"
                 ),
             },
             {
                 "title": "20. Summary",
                 "duration": "Section 3",
                 "embed_url": (
-                    "https://player.mediadelivery.net/embed/706368/"
-                    "afd8ea14-a0a5-4ec6-9864-fedd1f73df50"
+                    "https://player.mediadelivery.net/embed/809340/"
+                    "7a0a59a4-69da-43f6-8dfd-6a395af336b3"
                 ),
             },
             {
                 "title": "21. Intro",
                 "duration": "Section 4",
                 "embed_url": (
-                    "https://player.mediadelivery.net/embed/706368/"
-                    "eb7e5f38-7736-4269-96fc-52a3f763da76"
+                    "https://player.mediadelivery.net/embed/809340/"
+                    "6ccee0ea-0411-430c-92e4-a3e4edf83d56"
                 ),
             },
             {
                 "title": "22. Primary Detoxing Organs in the Human Body",
                 "duration": "Section 4",
                 "embed_url": (
-                    "https://player.mediadelivery.net/embed/706368/"
-                    "a8b4b493-629e-40d1-abd2-a9d96fc45971"
+                    "https://player.mediadelivery.net/embed/809340/"
+                    "25336876-c762-43c5-a22b-3a17aa817529"
                 ),
             },
             {
                 "title": "23. Intro",
                 "duration": "Section 4",
                 "embed_url": (
-                    "https://player.mediadelivery.net/embed/706368/"
-                    "c9270345-34ad-4819-a6fe-db407da2cb2b"
+                    "https://player.mediadelivery.net/embed/809340/"
+                    "2208d0f3-85cf-4089-889a-b88cb13c5ecb"
                 ),
             },
             {
                 "title": "24. Some Ways to Avoid Toxins",
                 "duration": "Section 4",
                 "embed_url": (
-                    "https://player.mediadelivery.net/embed/706368/"
-                    "ab4b5233-ceae-4f50-a931-c25959b2340f"
+                    "https://player.mediadelivery.net/embed/809340/"
+                    "5466dccd-fa5d-49a7-9da8-5957a7157e3d"
                 ),
             },
             {
                 "title": "25. Detox Programs Using Diets",
                 "duration": "Section 4",
                 "embed_url": (
-                    "https://player.mediadelivery.net/embed/706368/"
-                    "c74b1044-cfd9-4c08-9eac-131a72e3e6da"
+                    "https://player.mediadelivery.net/embed/809340/"
+                    "89bd7085-ed7e-408f-b6c3-6eee234c985f"
                 ),
             },
             {
                 "title": "26. Supplements for Detoxing",
                 "duration": "Section 4",
                 "embed_url": (
-                    "https://player.mediadelivery.net/embed/706368/"
-                    "73346231-279a-4c2f-b82c-982674480493"
+                    "https://player.mediadelivery.net/embed/809340/"
+                    "506f1bfb-421a-4b8a-947d-219136940a0a"
                 ),
             },
             {
                 "title": "27. Summary",
                 "duration": "Section 4",
                 "embed_url": (
-                    "https://player.mediadelivery.net/embed/706368/"
-                    "12aad289-bb52-4169-91e9-e5806f913f6f"
+                    "https://player.mediadelivery.net/embed/809340/"
+                    "1d2de371-de22-4569-9b6c-81521d9bd6a1"
                 ),
             },
             {
                 "title": "28. Intro",
                 "duration": "Section 5",
                 "embed_url": (
-                    "https://player.mediadelivery.net/embed/706368/"
-                    "0ae8e670-caca-4523-ad12-8b6f935b83f2"
+                    "https://player.mediadelivery.net/embed/809340/"
+                    "42dbc18b-ba05-4e1c-9f6e-13b6f9c11830"
                 ),
             },
             {
                 "title": "29. Building Muscle to Boost Metabolism",
                 "duration": "Section 5",
                 "embed_url": (
-                    "https://player.mediadelivery.net/embed/706368/"
-                    "d685e672-2707-4d58-bd83-6a6757685e07"
+                    "https://player.mediadelivery.net/embed/809340/"
+                    "8c28a0e5-77b3-46a0-a8e6-52b0149af354"
                 ),
             },
             {
                 "title": "30. Stimulating Brown Fat",
                 "duration": "Section 5",
                 "embed_url": (
-                    "https://player.mediadelivery.net/embed/706368/"
-                    "c0bfac43-c0f6-4fea-b2aa-b2e228cff26a"
+                    "https://player.mediadelivery.net/embed/809340/"
+                    "433f175f-e070-4e88-8448-1eb5986dc255"
                 ),
             },
             {
                 "title": "31. Metabolism Boosting Foods",
                 "duration": "Section 5",
                 "embed_url": (
-                    "https://player.mediadelivery.net/embed/706368/"
-                    "a5d9e061-b29f-4c72-97d3-7c01092dccb5"
+                    "https://player.mediadelivery.net/embed/809340/"
+                    "05372896-3084-462c-917f-eb6848d01263"
                 ),
             },
             {
                 "title": "32. Sleep & Hydration",
                 "duration": "Section 5",
                 "embed_url": (
-                    "https://player.mediadelivery.net/embed/706368/"
-                    "60841ee3-8089-4ee5-970b-022b331680ae"
+                    "https://player.mediadelivery.net/embed/809340/"
+                    "0b119abe-a278-4da3-a82e-6aaad0168af6"
                 ),
             },
             {
                 "title": "33. Summary",
                 "duration": "Section 5",
                 "embed_url": (
-                    "https://player.mediadelivery.net/embed/706368/"
-                    "701c8f82-aeaf-412a-9e82-cbac31804355"
+                    "https://player.mediadelivery.net/embed/809340/"
+                    "35916be3-9d4f-4db5-824c-70255a04cc39"
                 ),
             },
             {
                 "title": "34. Intro",
                 "duration": "Section 6",
                 "embed_url": (
-                    "https://player.mediadelivery.net/embed/706368/"
-                    "7fd675c4-7729-4b79-afbf-db9a6301210f"
+                    "https://player.mediadelivery.net/embed/809340/"
+                    "e89878d9-476d-44dd-a2ae-9bb5427c3155"
                 ),
             },
             {
                 "title": "35. All Fats Are Bad & Make You Gain Weight",
                 "duration": "Section 6",
                 "embed_url": (
-                    "https://player.mediadelivery.net/embed/706368/"
-                    "22936286-e80b-4c55-aac8-bba1773cd7db"
+                    "https://player.mediadelivery.net/embed/809340/"
+                    "3ed06f66-94f2-4423-a4b9-b7fc6a2f398f"
                 ),
             },
             {
                 "title": "36. Fruits Are Great for You",
                 "duration": "Section 6",
                 "embed_url": (
-                    "https://player.mediadelivery.net/embed/706368/"
-                    "18e17e25-116f-4b48-ba44-495fe31bdec5"
+                    "https://player.mediadelivery.net/embed/809340/"
+                    "cada1ab5-60c1-4e05-8e61-1a2ae8aaef21"
                 ),
             },
             {
                 "title": "37. You Can Exercise Your Way to Weight Loss",
                 "duration": "Section 6",
                 "embed_url": (
-                    "https://player.mediadelivery.net/embed/706368/"
-                    "9a2a548c-bc45-4f52-9aab-ffbbfb6ab368"
+                    "https://player.mediadelivery.net/embed/809340/"
+                    "ec3db7f7-2145-4921-b9da-c600ac5440dd"
                 ),
             },
             {
                 "title": "38. All Calories Are Equal",
                 "duration": "Section 6",
                 "embed_url": (
-                    "https://player.mediadelivery.net/embed/706368/"
-                    "653ad240-260b-40a5-bf44-c989c402eec1"
+                    "https://player.mediadelivery.net/embed/809340/"
+                    "b5452c9e-6817-4768-8500-18efe3ef1735"
                 ),
             },
             {
                 "title": "39. Summary",
                 "duration": "Section 6",
                 "embed_url": (
-                    "https://player.mediadelivery.net/embed/706368/"
-                    "31da7d07-2a6d-4105-85d2-9749b4252942"
+                    "https://player.mediadelivery.net/embed/809340/"
+                    "57476cc6-e1a3-4de4-807a-5e152cf7f818"
                 ),
             },
             {
                 "title": "40. Intro",
                 "duration": "Section 7",
                 "embed_url": (
-                    "https://player.mediadelivery.net/embed/706368/"
-                    "c62d04e1-80ed-44ca-9c25-2f653637fe33"
+                    "https://player.mediadelivery.net/embed/809340/"
+                    "719c7f15-238d-4848-baec-aee94cd8040b"
                 ),
             },
             {
                 "title": "41. Superfoods",
                 "duration": "Section 7",
                 "embed_url": (
-                    "https://player.mediadelivery.net/embed/706368/"
-                    "ad9561aa-0cf5-4709-bad7-9ecc3bfbc114"
+                    "https://player.mediadelivery.net/embed/809340/"
+                    "aa313156-ae6d-4ac9-ab10-7d224f62e92c"
                 ),
             },
             {
                 "title": "42. Skincare",
                 "duration": "Section 7",
                 "embed_url": (
-                    "https://player.mediadelivery.net/embed/706368/"
-                    "8df12a53-72e3-46de-83e3-b94d0575730b"
+                    "https://player.mediadelivery.net/embed/809340/"
+                    "c587426a-3911-4fa7-81ed-1bc51ba26162"
                 ),
             },
             {
                 "title": "43. Hot & Cold Therapies",
                 "duration": "Section 7",
                 "embed_url": (
-                    "https://player.mediadelivery.net/embed/706368/"
-                    "58dce542-9d42-4b1b-b577-e62569c08fe4"
+                    "https://player.mediadelivery.net/embed/809340/"
+                    "9dbcb40d-f43c-4233-b7ca-3646cd302c33"
                 ),
             },
             {
                 "title": "44. Supplements for Anti-Ageing",
                 "duration": "Section 7",
                 "embed_url": (
-                    "https://player.mediadelivery.net/embed/706368/"
-                    "7b9e4ca3-6971-45b5-9642-a9b4e86428f4"
+                    "https://player.mediadelivery.net/embed/809340/"
+                    "324a5b4b-ec93-4d7d-a362-639f06632065"
                 ),
             },
             {
                 "title": "45. Summary",
                 "duration": "Section 7",
                 "embed_url": (
-                    "https://player.mediadelivery.net/embed/706368/"
-                    "297f4d20-e1fc-4cdd-b1ba-140b06ee9b27"
+                    "https://player.mediadelivery.net/embed/809340/"
+                    "ef8ce567-687a-46c6-868e-50100df97646"
                 ),
             },
             {
                 "title": "46. Intro",
                 "duration": "Section 8",
                 "embed_url": (
-                    "https://player.mediadelivery.net/embed/706368/"
-                    "4ad96cf8-417d-4b4e-a1fb-657e88b11135"
+                    "https://player.mediadelivery.net/embed/809340/"
+                    "72a3a885-f27b-4812-bbae-4c26f402eb15"
                 ),
             },
             {
                 "title": "47. TDEE Calculation",
                 "duration": "Section 8",
                 "embed_url": (
-                    "https://player.mediadelivery.net/embed/706368/"
-                    "d42eefbe-7ecd-4c21-918f-b16aedaa5a28"
+                    "https://player.mediadelivery.net/embed/809340/"
+                    "a7ddb55f-29bd-4746-8ddd-a55781f206dc"
                 ),
             },
             {
                 "title": "48. Macronutrient Proportions",
                 "duration": "Section 8",
                 "embed_url": (
-                    "https://player.mediadelivery.net/embed/706368/"
-                    "a11b55e3-4005-4266-90c7-0245e7f3350c"
+                    "https://player.mediadelivery.net/embed/809340/"
+                    "a5ec8757-737f-49a5-ac4d-35bf4b5b7861"
                 ),
             },
             {
                 "title": "49. Plate Method",
                 "duration": "Section 8",
                 "embed_url": (
-                    "https://player.mediadelivery.net/embed/706368/"
-                    "8a56ff79-27aa-44cb-a4c9-83f856f87c18"
+                    "https://player.mediadelivery.net/embed/809340/"
+                    "fbcfae1b-9f0b-4a63-9e33-9411b226d8a9"
                 ),
             },
             {
                 "title": "50. Grocery Shopping",
                 "duration": "Section 8",
                 "embed_url": (
-                    "https://player.mediadelivery.net/embed/706368/"
-                    "76449597-7daf-409d-b1a7-1fbafdee7fda"
+                    "https://player.mediadelivery.net/embed/809340/"
+                    "e33969a1-b9f2-4fcb-8ace-fa6f27d61e30"
                 ),
             },
             {
                 "title": "51. A Typical Day's Diet",
                 "duration": "Section 8",
                 "embed_url": (
-                    "https://player.mediadelivery.net/embed/706368/"
-                    "97a317ed-09b5-4a3d-9793-55ad1f9b4275"
+                    "https://player.mediadelivery.net/embed/809340/"
+                    "2547ad81-7f39-46eb-88b4-84f462350e8e"
                 ),
             },
             {
                 "title": "53. Intro",
                 "duration": "Section 9",
                 "embed_url": (
-                    "https://player.mediadelivery.net/embed/706368/"
-                    "5ba0e822-3627-412b-b859-94bac58edf0c"
+                    "https://player.mediadelivery.net/embed/809340/"
+                    "3928ff0b-6cc6-4bb2-8bd3-cdbd71d4a6e1"
                 ),
             },
             {
                 "title": "54. How to Break the Fast",
                 "duration": "Section 9",
                 "embed_url": (
-                    "https://player.mediadelivery.net/embed/706368/"
-                    "ad44ad9c-c378-4db6-8f48-7ece365a3bb1"
+                    "https://player.mediadelivery.net/embed/809340/"
+                    "5b76b22e-1d90-4fe7-9237-3f1ce26718dd"
                 ),
             },
             {
                 "title": "55. How to Prolong the Fast",
                 "duration": "Section 9",
                 "embed_url": (
-                    "https://player.mediadelivery.net/embed/706368/"
-                    "1e67b584-a64c-465c-9775-bba4adfec246"
+                    "https://player.mediadelivery.net/embed/809340/"
+                    "6333b5f3-f620-4047-a41b-c38d6f2ed5eb"
                 ),
             },
             {
                 "title": "56. Different Types of Fast",
                 "duration": "Section 9",
                 "embed_url": (
-                    "https://player.mediadelivery.net/embed/706368/"
-                    "efb346bd-4ea1-45e5-ad90-d5e968e12136"
+                    "https://player.mediadelivery.net/embed/809340/"
+                    "0e76b554-b442-40e0-980b-2b7b777a574e"
                 ),
             },
             {
                 "title": "57. How Women Should Fast",
                 "duration": "Section 9",
                 "embed_url": (
-                    "https://player.mediadelivery.net/embed/706368/"
-                    "16f36188-a7e6-48df-b1f1-997616cf922d"
+                    "https://player.mediadelivery.net/embed/809340/"
+                    "e1ebc51b-ea43-4585-943d-4f81e79a0a57"
                 ),
             },
             {
                 "title": "58. Summary",
                 "duration": "Section 9",
                 "embed_url": (
-                    "https://player.mediadelivery.net/embed/706368/"
-                    "56d7c608-0419-4098-a4c6-0710966bcf83"
+                    "https://player.mediadelivery.net/embed/809340/"
+                    "b4994b64-030c-45c2-8234-cd0b01d8e809"
                 ),
             },
             {
                 "title": "59. Intro",
                 "duration": "Section 10",
                 "embed_url": (
-                    "https://player.mediadelivery.net/embed/706368/"
-                    "208480f2-d5fa-43d0-93db-594eee0448a4"
+                    "https://player.mediadelivery.net/embed/809340/"
+                    "f8dbd323-be90-4930-9efb-ff0f744327ef"
                 ),
             },
             {
                 "title": "60. Tips, Tricks, Hacks & Secrets",
                 "duration": "Section 10",
                 "embed_url": (
-                    "https://player.mediadelivery.net/embed/706368/"
-                    "3c2ddf6c-c7cf-4d6a-825c-2c27f1e2f1cd"
+                    "https://player.mediadelivery.net/embed/809340/"
+                    "9833b079-f320-4d83-8416-412b764fe42a"
                 ),
             },
             {
                 "title": "61. Intro",
                 "duration": "Section 11",
                 "embed_url": (
-                    "https://player.mediadelivery.net/embed/706368/"
-                    "78610ad2-9935-4a27-b061-bfa8c2ab3554"
+                    "https://player.mediadelivery.net/embed/809340/"
+                    "02b8a4b4-2be4-4989-b680-6d111fa4f143"
                 ),
             },
             {
                 "title": "70. Indian Healthy Cuisine Recipe 1 — Makhana (Fox Nuts)",
                 "duration": "Section 11",
                 "embed_url": (
-                    "https://player.mediadelivery.net/embed/706368/"
-                    "4fbe33a4-21cb-46e6-bb5a-f787810f50c9"
+                    "https://player.mediadelivery.net/embed/809340/"
+                    "32394545-9a97-43e6-9d49-0d4c263cde3d"
                 ),
             },
             {
                 "title": "71. Indian Healthy Cuisine Recipe 2 — Moong Dal Dosa",
                 "duration": "Section 11",
                 "embed_url": (
-                    "https://player.mediadelivery.net/embed/706368/"
-                    "1b242323-d154-452b-b108-49c9f4ebfc75"
+                    "https://player.mediadelivery.net/embed/809340/"
+                    "4b7d5c45-b601-439d-bfbe-d88e4ef3a585"
                 ),
             },
             {
                 "title": "72. Indian Healthy Cuisine Recipe 3 — Bajra Rotis",
                 "duration": "Section 11",
                 "embed_url": (
-                    "https://player.mediadelivery.net/embed/706368/"
-                    "3fc646a1-635a-43e3-acc5-d3b501f9286c"
+                    "https://player.mediadelivery.net/embed/809340/"
+                    "692483b3-ba33-4034-ba60-77eeaee492fd"
                 ),
             },
             {
                 "title": "73. Congrats & Thank You",
                 "duration": "Section 12",
                 "embed_url": (
-                    "https://player.mediadelivery.net/embed/706368/"
-                    "6776ca41-28f6-4195-86c1-f41cb4d6e0c5"
+                    "https://player.mediadelivery.net/embed/809340/"
+                    "46e4dc91-feff-43df-9eea-36947df740a4"
                 ),
             },
             {
                 "title": "74. Meditation",
                 "duration": "Section 12",
                 "embed_url": (
-                    "https://player.mediadelivery.net/embed/706368/"
-                    "8e56762c-7228-4f12-b58e-5edb75f54102"
+                    "https://player.mediadelivery.net/embed/809340/"
+                    "253ee889-ae97-4f53-a2c5-c0472aeae4a9"
                 ),
             },
             {
                 "title": "75. Timeless Beauties with Berries",
                 "duration": "Section 12",
                 "embed_url": (
-                    "https://player.mediadelivery.net/embed/706368/"
-                    "410b9909-5ade-4cb9-ae64-0ffe504c2653"
+                    "https://player.mediadelivery.net/embed/809340/"
+                    "c8bf8a08-d806-475b-b063-3efb71d97f60"
                 ),
             },
         ],
@@ -613,24 +613,24 @@ COURSES = {
                 "title": "Day 1 — The Elimination Diet",
                 "duration": "19:28",
                 "embed_url": (
-                    "https://player.mediadelivery.net/embed/705527/"
-                    "aa9e8f57-6535-4e08-8c19-2bd18b8a5170"
+                    "https://player.mediadelivery.net/embed/809340/"
+                    "5139fbd1-c3ca-4580-b2ce-3f0e0a8a7db3"
                 ),
             },
             {
                 "title": "Day 2 — Fermented Foods and Hydration",
                 "duration": "13:59",
                 "embed_url": (
-                    "https://player.mediadelivery.net/embed/705527/"
-                    "e7fb8558-c144-40ea-9bd2-bb9612640827"
+                    "https://player.mediadelivery.net/embed/809340/"
+                    "61817c5e-3db8-4819-94a0-25fc04d97b04"
                 ),
             },
             {
                 "title": "Day 3 — Gut Health and Mindfulness",
                 "duration": "08:58",
                 "embed_url": (
-                    "https://player.mediadelivery.net/embed/705527/"
-                    "5ac8c762-6ddf-40b6-99a4-9fa1813567e2"
+                    "https://player.mediadelivery.net/embed/809340/"
+                    "b77536c3-44f7-46ef-8efa-d09257bfcc5b"
                 ),
             },
         ],
@@ -654,8 +654,8 @@ COURSES = {
                 "title": "Obesity the New Pandemic — Top 3 Ways to Combat It",
                 "duration": "Video lesson",
                 "embed_url": (
-                    "https://player.mediadelivery.net/embed/706356/"
-                    "7b63c07d-5a49-44fd-a980-aebedafd9e80"
+                    "https://player.mediadelivery.net/embed/809340/"
+                    "0ab5f937-862b-47ff-8f10-148474a0ee6a"
                 ),
             },
         ],
