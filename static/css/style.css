@@ -917,10 +917,11 @@ h1 {
     flex-direction: column;
     gap: 16px;
     align-items: stretch;
+    box-sizing: border-box;
     height: 100%;
     max-width: none;
     margin: 0;
-    padding: 16px;
+    padding: 16px 16px 36px;
     background: #1c1c1c;
     border-radius: 12px;
     text-decoration: none;
@@ -1005,8 +1006,10 @@ h1 {
     pointer-events: none;
 }
 .courses-banner-more {
+    position: relative;
+    z-index: 1;
     text-align: center;
-    margin: 18px 0 0;
+    margin: 28px 0 0;
 }
 .courses-banner-more a {
     color: #fff;
