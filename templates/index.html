@@ -206,8 +206,7 @@
                                 {{ course.eyebrow or "Direct checkout on this website" }}
                             </p>
                             <h3>{{ course.title }}</h3>
-                            <p>{{ course.short_description }}</p>
-                            <span class="course-feature-price">${{ '%.2f'|format(course.price_cents / 100) }}</span>
+                            <p class="course-feature-desc">{{ course.short_description }}</p>
                             {% if course.discount_code and course.discount_amount_cents %}
                             <p class="course-feature-promo">
                                 Enter code <strong>{{ course.discount_code }}</strong> at checkout and pay
@@ -218,7 +217,10 @@
                                 Use code <strong>{{ course.discount_code }}</strong> for {{ course.discount_percent }}% off at checkout
                             </p>
                             {% endif %}
-                            <span class="cta-button course-feature-cta">Buy direct — one-click checkout</span>
+                            <div class="course-feature-buy">
+                                <span class="course-feature-price">${{ '%.2f'|format(course.price_cents / 100) }}</span>
+                                <span class="cta-button course-feature-cta">Buy direct — one-click checkout</span>
+                            </div>
                         </div>
                     </a>
                     {% endfor %}

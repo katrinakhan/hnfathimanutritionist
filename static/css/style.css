@@ -917,6 +917,7 @@ h1 {
     flex-direction: column;
     gap: 16px;
     align-items: stretch;
+    height: 100%;
     max-width: none;
     margin: 0;
     padding: 16px;
@@ -941,13 +942,21 @@ h1 {
     aspect-ratio: 16 / 9;
 }
 .course-feature-copy {
-    flex: none;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
     text-align: left;
 }
 .course-feature-promo {
     margin: 0 0 12px;
     color: #ffcc80;
     font-size: 14px;
+}
+.course-feature-buy {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 .course-promo-note {
     text-align: center;
@@ -1042,6 +1051,10 @@ h1 {
     }
     .course-feature-copy {
         text-align: center;
+    }
+    .course-feature-buy {
+        align-items: center;
+        margin-top: 0;
     }
     .course-feature-cta {
         width: 100%;
