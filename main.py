@@ -310,6 +310,25 @@ def create_checkout(course_id):
     return redirect(checkout_session.url, code=303)
 
 
+def _purchase_for_analytics(course, session_data, session_id):
+    """Amount actually paid, so Google Analytics can show the sale."""
+    amount = session_data.get("amount_total")
+    if amount is None:
+        amount = session_data.get("amount_received")
+    if amount is None:
+        amount = session_data.get("amount")
+    if amount is None:
+        amount = course.get("price_cents") or 0
+    currency = session_data.get("currency") or course.get("currency") or "usd"
+    return {
+        "transaction_id": session_id,
+        "value": round(int(amount) / 100, 2),
+        "currency": str(currency).upper(),
+        "item_id": course["id"],
+        "item_name": course["title"],
+    }
+
+
 @app.route("/shop/success")
 def checkout_success():
     session_id = request.args.get("session_id")
@@ -341,6 +360,7 @@ def checkout_success():
             "checkout_success.html",
             course=course,
             access_token=access_token,
+            purchase=_purchase_for_analytics(course, session_data, session_id),
         )
     except Exception as exc:
         app.logger.error("checkout_success failed:\n%s", traceback.format_exc())

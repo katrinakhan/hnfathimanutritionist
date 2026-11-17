@@ -9,6 +9,29 @@
     {% include 'includes/seo.html' %}
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     {% include 'includes/ga4.html' %}
+    {% if purchase %}
+    <script>
+      (function () {
+        var purchase = {{ purchase | tojson }};
+        var key = "ga-purchase-" + purchase.transaction_id;
+        try {
+          if (window.sessionStorage.getItem(key)) return;
+          window.sessionStorage.setItem(key, "1");
+        } catch (err) {}
+        gtag("event", "purchase", {
+          transaction_id: purchase.transaction_id,
+          value: purchase.value,
+          currency: purchase.currency,
+          items: [{
+            item_id: purchase.item_id,
+            item_name: purchase.item_name,
+            price: purchase.value,
+            quantity: 1
+          }]
+        });
+      })();
+    </script>
+    {% endif %}
 </head>
 <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
