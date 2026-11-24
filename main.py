@@ -1,4 +1,5 @@
 import os
+import re
 import secrets
 import traceback
 from datetime import timedelta
@@ -119,17 +120,58 @@ def _payment_is_complete(session_data: dict) -> bool:
     )
 
 
-def _course_for_paid_intent(reference: str):
-    """Match a succeeded Payment ID to a course when the checkout session is missing."""
-    intent = _as_dict(stripe.PaymentIntent.retrieve(reference))
-    if intent.get("status") not in ("succeeded", "requires_capture", "processing"):
-        return None
-    amount = intent.get("amount_received") or intent.get("amount")
-    currency = (intent.get("currency") or "usd").lower()
+def _payment_reference(raw: str) -> str:
+    """Pull a Payment ID or Checkout Session ID out of a pasted link."""
+    text = (raw or "").strip()
+    found = re.search(r"((?:pi|cs)_[A-Za-z0-9]+)", text)
+    return found.group(1) if found else text
+
+
+def _course_price_matches(course: dict, amount, currency: str) -> bool:
+    """True for the list price or the discounted price, such as $6 with GUT30."""
+    if amount is None:
+        return False
+    try:
+        paid = int(amount)
+    except (TypeError, ValueError):
+        return False
+    if (course.get("currency") or "usd").lower() != (currency or "usd").lower():
+        return False
+    list_price = int(course.get("price_cents") or 0)
+    accepted = {list_price}
+    discount = course.get("discount_amount_cents") or 0
+    if discount:
+        accepted.add(list_price - int(discount))
+    return paid in accepted
+
+
+def _course_for_amount(amount, currency: str):
     for course in all_courses():
-        if course["price_cents"] == amount and course.get("currency", "usd") == currency:
+        if _course_price_matches(course, amount, currency):
             return course
     return None
+
+
+def _course_for_paid_intent(reference: str):
+    """Match a succeeded Payment ID to a course when the checkout session is missing."""
+    try:
+        intent = _as_dict(stripe.PaymentIntent.retrieve(reference))
+    except Exception:
+        app.logger.error("payment intent lookup failed:\n%s", traceback.format_exc())
+        return None
+    if intent.get("status") not in ("succeeded", "requires_capture", "processing"):
+        return None
+    metadata = intent.get("metadata") or {}
+    if not isinstance(metadata, dict):
+        metadata = _as_dict(metadata)
+    course_id = metadata.get("course_id")
+    if course_id:
+        course = get_course(course_id)
+        if course:
+            return course
+    amount = intent.get("amount_received") or intent.get("amount")
+    currency = (intent.get("currency") or "usd").lower()
+    return _course_for_amount(amount, currency)
 
 
 def _session_course_id(checkout_session) -> str | None:
@@ -297,6 +339,7 @@ def create_checkout(course_id):
             ),
             "cancel_url": f"{base}{url_for('course_detail', course_id=course_id)}",
             "metadata": {"course_id": course_id},
+            "payment_intent_data": {"metadata": {"course_id": course_id}},
         }
         if course.get("discount_code"):
             session_params["allow_promotion_codes"] = True
@@ -331,7 +374,7 @@ def _purchase_for_analytics(course, session_data, session_id):
 
 @app.route("/shop/success")
 def checkout_success():
-    session_id = request.args.get("session_id")
+    session_id = _payment_reference(request.args.get("session_id") or "")
     if not session_id or not stripe.api_key:
         flash("Missing payment confirmation.", "error")
         return redirect(url_for("shop"))
@@ -348,6 +391,11 @@ def checkout_success():
         if checkout_session is not None and _payment_is_complete(session_data):
             course_id = _session_course_id(checkout_session)
             course = get_course(course_id) if course_id else None
+            if course is None:
+                course = _course_for_amount(
+                    session_data.get("amount_total"),
+                    session_data.get("currency") or "usd",
+                )
         if course is None and session_id.startswith("pi_"):
             course = _course_for_paid_intent(session_id)
         if course is None:
@@ -356,11 +404,16 @@ def checkout_success():
 
         grant_course_access(course["id"])
         access_token = make_access_token(course["id"])
+        try:
+            purchase = _purchase_for_analytics(course, session_data, session_id)
+        except Exception:
+            app.logger.error("purchase analytics failed:\n%s", traceback.format_exc())
+            purchase = None
         return render_template(
             "checkout_success.html",
             course=course,
             access_token=access_token,
-            purchase=_purchase_for_analytics(course, session_data, session_id),
+            purchase=purchase,
         )
     except Exception as exc:
         app.logger.error("checkout_success failed:\n%s", traceback.format_exc())
