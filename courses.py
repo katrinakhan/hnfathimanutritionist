@@ -614,7 +614,7 @@ COURSES = {
                 "duration": "19:28",
                 "embed_url": (
                     "https://player.mediadelivery.net/embed/809340/"
-                    "5139fbd1-c3ca-4580-b2ce-3f0e0a8a7db3"
+                    "9d43226c-3c3e-41e1-a78e-05b699b261af"
                 ),
             },
             {
@@ -622,7 +622,7 @@ COURSES = {
                 "duration": "13:59",
                 "embed_url": (
                     "https://player.mediadelivery.net/embed/809340/"
-                    "61817c5e-3db8-4819-94a0-25fc04d97b04"
+                    "4c1363c1-fbb1-4445-aba4-189461bb2ee8"
                 ),
             },
             {
@@ -630,7 +630,7 @@ COURSES = {
                 "duration": "08:58",
                 "embed_url": (
                     "https://player.mediadelivery.net/embed/809340/"
-                    "b77536c3-44f7-46ef-8efa-d09257bfcc5b"
+                    "13a82204-7569-48a6-9803-dfde8d22dee1"
                 ),
             },
         ],
