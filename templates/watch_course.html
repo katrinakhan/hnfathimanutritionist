@@ -32,8 +32,22 @@
                     <section class="lesson-player-block">
                         <h3 class="lesson-title-heading">{{ lesson.title }}</h3>
                         <div class="bunny-embed">
+                            {% if lesson.poster %}
+                            <button
+                                type="button"
+                                class="bunny-poster"
+                                style="background-image: url('{{ url_for('static', filename=lesson.poster) }}')"
+                                aria-label="Play {{ lesson.title }}"
+                            >
+                                <span class="bunny-play-icon" aria-hidden="true"></span>
+                            </button>
+                            {% endif %}
                             <iframe
+                                {% if lesson.poster %}
+                                data-src="{{ lesson.embed_url }}?autoplay=true&preload=true"
+                                {% else %}
                                 src="{{ lesson.embed_url }}?autoplay=false&preload=true"
+                                {% endif %}
                                 loading="lazy"
                                 allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen;"
                                 allowfullscreen
@@ -65,5 +79,15 @@
             </div>
         </main>
     </div>
+    <script>
+      document.querySelectorAll(".bunny-poster").forEach(function (button) {
+        button.addEventListener("click", function () {
+          var frame = button.parentElement.querySelector("iframe");
+          var src = frame.getAttribute("data-src");
+          if (src) frame.src = src;
+          button.remove();
+        });
+      });
+    </script>
 </body>
 </html>

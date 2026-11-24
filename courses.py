@@ -612,6 +612,7 @@ COURSES = {
             {
                 "title": "Day 1 — The Elimination Diet",
                 "duration": "19:28",
+                "poster": "images/gut-day1.jpg",
                 "embed_url": (
                     "https://player.mediadelivery.net/embed/809340/"
                     "9d43226c-3c3e-41e1-a78e-05b699b261af"
@@ -620,6 +621,7 @@ COURSES = {
             {
                 "title": "Day 2 — Fermented Foods and Hydration",
                 "duration": "13:59",
+                "poster": "images/gut-day2.jpg",
                 "embed_url": (
                     "https://player.mediadelivery.net/embed/809340/"
                     "4c1363c1-fbb1-4445-aba4-189461bb2ee8"
@@ -628,6 +630,7 @@ COURSES = {
             {
                 "title": "Day 3 — Gut Health and Mindfulness",
                 "duration": "08:58",
+                "poster": "images/gut-day3.jpg",
                 "embed_url": (
                     "https://player.mediadelivery.net/embed/809340/"
                     "13a82204-7569-48a6-9803-dfde8d22dee1"
