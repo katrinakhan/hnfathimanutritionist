@@ -634,6 +634,23 @@ COURSES = {
                 ),
             },
         ],
+        "resources": [
+            {
+                "title": "Day 1 — Elimination Reset",
+                "section": "19:28",
+                "file": "course-files/gut-health/day-1-elimination-reset.pdf",
+            },
+            {
+                "title": "Day 2 — Fermented Foods, Probiotics and Hydration",
+                "section": "13:59",
+                "file": "course-files/gut-health/day-2-fermented-foods.pdf",
+            },
+            {
+                "title": "Day 3 — Mindfulness and the Gut Connection",
+                "section": "08:58",
+                "file": "course-files/gut-health/day-3-mindfulness.pdf",
+            },
+        ],
     },
     "obesity-the-new-pandemic": {
         "id": "obesity-the-new-pandemic",
